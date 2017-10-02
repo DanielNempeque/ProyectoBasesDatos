@@ -44,5 +44,135 @@
 			</div>
 		</div>
 	</nav>
+        <!--end navbar-->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1" ></li>
+			<li data-target="#myCarousel" data-slide-to="2" ></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="img/Laura1.jpg">
+				<div class="carousel-caption">
+					<img src="img/Recurso3LogoPetmeGrande.png" width="50%">
+				</div>
+			</div>
+
+			 <!--end active-->
+			<div class="item">
+				<img src="img/slider2.jpg">
+			</div>
+			<div class="item">
+				<img src="img/slider3.jpg">
+			</div>
+		</div>
+		<!--Start Slider-->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previus</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+
+
+	</div>
+
+
+	<!-- Description -->
+	<div class="container" id="about">
+		<h1 class="text-center">We are a Vet!</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Description</h3>
+				<p class="text-justify">Semiotics hell of iceland, gastropub brunch occaecat af listicle hot chicken. Activated charcoal vice pickled put a bird on it in, palo santo butcher flexitarian kogi yr copper mug pariatur labore. Dolore cloud bread pickled thundercats cray gentrify unicorn venmo brunch direct trade four loko aute activated charcoal hashtag. Labore subway tile raw denim intelligentsia, pickled unicorn nisi hot chicken fugiat viral distillery cupidatat. Typewriter taxidermy ugh enamel pin slow-carb +1. Narwhal aesthetic biodiesel dreamcatcher dolore. Plaid portland beard, marfa microdosing jean shorts narwhal vinyl ex blue bottle. Neutra deep v jianbing waistcoat subway tile food truck blue bottle nulla do messenger bag selvage meditation. Squid irure veniam scenester sustainable consectetur bushwick ex single-origin coffee.</p>
+
+				<p class="text-justify">Mustache laboris forage, in 8-bit dreamcatcher salvia yuccie edison bulb tbh. Gochujang do ea jianbing fugiat. Tilde copper mug cold-pressed, nostrud affogato flannel ullamco. Meggings palo santo venmo consequat PBR&B do salvia banjo. Est deserunt roof party viral qui fugiat pabst laboris master cleanse officia, craft beer shoreditch gastropub occaecat. Non sed gentrify messenger bag. Four dollar toast knausgaard asymmetrical, ugh gentrify whatever sustainable chartreuse ut occaecat velit bicycle rights. Etsy sed polaroid chambray, craft beer shabby chic blue bottle schlitz. IPhone tote bag glossier try-hard excepteur, chia thundercats disrupt intelligentsia mumblecore. Pour-over chambray mumblecore single-origin coffee farm-to-table ut lyft lomo air plant XOXO occaecat.</p>
+
+			</div>
+
+			<div class="col-md-6" style="margin-top: 5%">
+				<img src="img/description.jpg" class="img-responsive">
+			</div>
+		</div>
+	</div>
+
+	<!-- Login -->
+
+  <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="email" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="pswlogin"placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="#myRegister">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<!--register-->
+<div class="modal fade" id="register" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Register</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="fa fa-envelope"></span> Mail</label>
+              <input type="email" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="psw1" placeholder="Enter password">
+              <br>
+              <input type="password" class="form-control" id="psw2" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>¿Deseas recibir correos?</label>
+            </div>
+            <button type="submit" class="btn btn-default btn-success btn-block" id="regi"><span class="glyphicon glyphicon-off"></span> Register</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div> 
     </body>
 </html>
