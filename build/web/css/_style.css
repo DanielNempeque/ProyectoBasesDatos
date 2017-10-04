@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+
+@media (max-width: 900px){
+  	.carousel-caption{
+  		display: none;
+  	}
+  	#icon{
+  		max-width: 150px;
+  	}
+  	h2{
+  		font-size: 1.9em;
+  	}
+    .LogoPrincipal{
+      width: 20%;
+    }
+
+}
