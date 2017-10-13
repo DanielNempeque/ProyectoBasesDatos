@@ -23,36 +23,36 @@
         
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 10%">
 		<div class="container-fluid">
 		<!-- Media menu button-->
 
-			<div class="navbar-header">
+                <div class="navbar-header" style="width: 20%">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar" >
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="11%" ></a>
+                    <a class="navbar-brand" href=""> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
 				
 			</div>	
 
 		<!-- end media menu button-->
 
 			<div class="collapse navbar-collapse" id="MyNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="shop.html">Shop <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-					<li><a href="#schedule">Consultas</a></li>
-					<li><a href="#sponsors">Random</a></li>
-					<button type="button" class="btn btn-primary btn-lg" id="myLogin">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-					<button type="button" class="btn btn-default btn-lg" id="myRegister">Register</button>
+				<ul class="nav navbar-nav navbar-right ">
+					<li><a href="shop.html">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+					<li><a href="profile.html">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
+					<button type="button" class="btn btn-primary btn-lg" onClick="window.location.href='Login.jsp'">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+					<button type="button" class="btn btn-default btn-lg" onClick="window.location.href='register.html'">Register</button>
 				</ul>			
 									
 			</div>
 		</div>
 	</nav>
-        <!--end navbar-->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+	<!--Image Slider-->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			<li data-target="#myCarousel" data-slide-to="1" ></li>
@@ -60,9 +60,9 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="Web Pages/img/Laura1.jpg">
+				<img src="img/Laura1.jpg">
 				<div class="carousel-caption">
-					<img src="img/Recurso3LogoPetmeGrande.png" width="50%">
+                                    <img src="img/Recurso 8Logo1.png" width="50%">
 				</div>
 			</div>
 
@@ -105,43 +105,8 @@
 			</div>
 		</div>
 	</div>
+ 
 
-	<!-- Login -->
-
-  <div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
-        </div>
-        <div class="modal-body">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="email" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="password" class="form-control" id="pswlogin"placeholder="Enter password">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-            <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-          <p>Not a member? <a href="#myRegister">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
-      </div>
-    </div>
-  </div> 
-</div>
 
 <!--register-->
 <div class="modal fade" id="register" role="dialog">
