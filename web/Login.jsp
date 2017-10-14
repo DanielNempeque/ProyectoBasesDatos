@@ -56,7 +56,7 @@
 		<!--Login Form-->
 
 		<div class="container-fluid">
-			<div class="login">
+			<div class="login"> 
 				<div class="col-lg-4 col-lg-offset-4">
 					<h1 class="text-center"><strong>Login</strong></h1>
 					<form method="get" action="">
