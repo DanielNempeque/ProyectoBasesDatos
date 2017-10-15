@@ -5,7 +5,7 @@
   		display: none;
   	}
   	#icon{
-  		max-width: 150px;
+  		max-width: 150ox;
   	}
   	h2{
   		font-size: 1.9em;
@@ -13,5 +13,6 @@
     .LogoPrincipal{
       width: 20%;
     }
-
-}
+  }
+ 
+ 

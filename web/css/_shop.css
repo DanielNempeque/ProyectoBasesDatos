@@ -77,8 +77,7 @@
     letter-spacing: 1px;
 }
 /*.mini-menu .sub > ul > li > a:hover,*/
-.mini-menu .sub > a.active
- {
+.mini-menu .sub > a.active{
     padding-left: 1.3em;
     color: blue;
     content: "1";
