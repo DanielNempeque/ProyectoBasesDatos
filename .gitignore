@@ -1,2 +1,6 @@
 
 *.properties
+*.properties
+src/java/Controller/Conexion.java
+*.properties
+nbproject/private/private.xml
