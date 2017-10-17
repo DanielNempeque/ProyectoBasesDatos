@@ -32,7 +32,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                    <a class="navbar-brand" href="index.jsp"> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
+                    <a class="navbar-brand" href="login.jsp"> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
 				
 			</div>	
 
@@ -85,6 +85,7 @@
         </div>
       </div>
     </div>
+    
     <div class="row">
       <div class="col-lg-3 col-lg-offset-3">
         <h3 class="text-center">item1</h3>
