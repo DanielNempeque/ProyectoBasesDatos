@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Login
-    Created on : 11/10/2017, 08:20:18 PM
+    Document   : Register
+    Created on : 14/10/2017, 07:35:36 PM
     Author     : Daniel Nempeque
 --%>
 
@@ -53,25 +53,32 @@
 		</div>
 	</nav>
 
-		<!--Login Form-->
 
-		<div class="container-fluid">
-			<div class="login">
+
+	<div class="container-fluid">
+
+			<div class="register">
 				<div class="col-lg-4 col-lg-offset-4">
-					<h1 class="text-center"><strong>Login</strong></h1>
+					<h1 class="text-center"><strong>Register</strong></h1>
 					<form method="get" action="">
-			            <div class="form-group">
+						<div class="form-group">
 			              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+			              <input type="text" class="form-control" id="usrname" placeholder="Enter username">
+			            </div>
+			            <div class="form-group">
+			              <label for="usrname"><span class="fa fa-envelope"></span> Mail</label>
 			              <input type="email" class="form-control" id="usrname" placeholder="Enter email">
 			            </div>
 			            <div class="form-group">
 			              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-			              <input type="password" class="form-control" id="pswlogin"placeholder="Enter password">
+			              <input type="password" class="form-control" id="psw1" placeholder="Enter password">
+			              <br>
+			              <input type="password" class="form-control" id="psw2" placeholder="Enter password">
 			            </div>
 			            <div class="checkbox">
-			              <label><input type="checkbox" value="" checked>Remember me</label>
+			              <label><input type="checkbox" value="" checked>¿Deseas recibir correos?</label>
 			            </div>
-			            <button type="submit" class="btn btn-default btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>						
+			            <button type="submit" class="btn btn-default btn-primary btn-block" id="regi"><span class="glyphicon glyphicon-off"></span> Register</button>
 					</form>
 				</div>
 			</div>

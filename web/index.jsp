@@ -33,7 +33,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                    <a class="navbar-brand" href=""> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
+                    <a class="navbar-brand" href="index.jsp"> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
 				
 			</div>	
 
@@ -41,10 +41,10 @@
 
 			<div class="collapse navbar-collapse" id="MyNavbar">
 				<ul class="nav navbar-nav navbar-right ">
-					<li><a href="shop.html">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-					<li><a href="profile.html">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
-					<button type="button" class="btn btn-primary btn-lg" onClick="window.location.href='Login.jsp'">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-					<button type="button" class="btn btn-default btn-lg" onClick="window.location.href='register.html'">Register</button>
+					<li><a href="Shop.jsp">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+					<li><a href="Profile.jsp">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
+					<button type="button" class="btn btn-primary btn-lg" onClick="window.location.href='login.jsp'">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+					<button type="button" class="btn btn-default btn-lg" onClick="window.location.href='Register.jsp'">Register</button>
 				</ul>			
 									
 			</div>

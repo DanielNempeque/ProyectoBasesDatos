@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Login
-    Created on : 11/10/2017, 08:20:18 PM
+    Document   : Prrofile
+    Created on : 14/10/2017, 06:59:41 PM
     Author     : Daniel Nempeque
 --%>
 
@@ -22,7 +22,7 @@
 		<script type="text/javascript" src="js/modal.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/_navbar.css">
 		<link rel="stylesheet" type="text/css" href="css/_style.css">
-		
+		<link rel="stylesheet" type="text/css" href="css/_profile.css">
 	</head>
     <body>
         <nav class="navbar navbar-inverse" style="height: 10%">
@@ -53,30 +53,21 @@
 		</div>
 	</nav>
 
-		<!--Login Form-->
-
-		<div class="container-fluid">
-			<div class="login">
-				<div class="col-lg-4 col-lg-offset-4">
-					<h1 class="text-center"><strong>Login</strong></h1>
-					<form method="get" action="">
-			            <div class="form-group">
-			              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-			              <input type="email" class="form-control" id="usrname" placeholder="Enter email">
-			            </div>
-			            <div class="form-group">
-			              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-			              <input type="password" class="form-control" id="pswlogin"placeholder="Enter password">
-			            </div>
-			            <div class="checkbox">
-			              <label><input type="checkbox" value="" checked>Remember me</label>
-			            </div>
-			            <button type="submit" class="btn btn-default btn-primary btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>						
-					</form>
-				</div>
-			</div>
+	<div class="container-fluid" >
+		<div class="col-lg-3" id="profile">
+			<img src="img/profile.jpg" width="180px" height="180px" class="img-circle center-block" id="fotoperfil">
+			<h3 class="text-center">Nombre animal</h3>
+			<label>Raza:</label>
+			<p>Raza animal</p>
+			<label>Sexo:</label>
+			<p>Sexo animal</p>
+			<label>Edad:</label>
+			<p>edad</p>
+			<label>Tipo Sangre:</label>
+			<p>Tipo Sangre</p>
 			
+
 		</div>
-		
-	</body>
+	</div>		
+</body>
 </html>
