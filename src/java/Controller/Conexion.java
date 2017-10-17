@@ -28,7 +28,7 @@ public class Conexion {
         try { //ERRORES COMUNES
             Class.forName(CLASSNAME);
             con = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-            
+            System.out.println("Conexion con la base compleatada");            
         } catch (ClassNotFoundException e) {
             System.err.println("ERROR: "+e);
         } catch (SQLException e){
@@ -38,6 +38,9 @@ public class Conexion {
     
     public Connection getConnection(){
         return con; //RETORNA LA CONEXION A LA BASE DE DATOS
+    }
+    public static void main(String[] args) {
+        Conexion con = new Conexion();
     }
     
 }

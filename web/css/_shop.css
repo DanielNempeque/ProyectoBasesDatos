@@ -5,8 +5,6 @@
 .menu {
     display: inline-block;  
     float: left;
-    position: fixed;
-
 }
 .menu-item {
     background-color: #FEFEFE;
@@ -151,3 +149,8 @@ input[type=text]:focus {
     padding-right: 5%; 
 }
 
+@media (max-width: 600px){
+    .menu{
+        position: fixed;
+    }
+}
