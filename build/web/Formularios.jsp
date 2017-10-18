@@ -52,7 +52,6 @@
 		</div>
 	</nav>
 	
-    </body>
 <div class="container-fluid" style="padding-top: 10%">
 	<div class="row">
 		<div class="col-sm-4">
