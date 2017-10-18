@@ -1,13 +1,28 @@
-
-#fotoperfil{
-	padding-top: 1%;
+body, html {
+    height: 100%;
 }
 
-#profile{
-	margin-top: 2%;
-	background-color: #6699ff;
-	padding: 1%;
-	color:#FFF;
-	-moz-border-radius: 15px 15px 15px 15px;
-	-webkit-border-radius: 15px 15px 15px 15px;
+/* The hero image */
+.hero-image {
+    /* The image used */
+    background-image: url("Laura1.jpg");
+
+    /* Set a specific height */
+    height: 50%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }

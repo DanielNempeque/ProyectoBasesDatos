@@ -5,7 +5,6 @@
  */
 package Controller;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -14,8 +13,9 @@ import javax.swing.JOptionPane;
  *
  * @author Daniel Nempeque
  */
-public class Querys extends Conexion{
-    public boolean auth(String user, String password){
+public class Querys extends Conexion {
+
+    public boolean auth(String user, String password) {
         PreparedStatement pst = null;
         ResultSet rs = null;
         try {
@@ -30,33 +30,40 @@ public class Querys extends Conexion{
             pst.setString(3, user);
             pst.setString(4, password);
             rs = pst.executeQuery();
-            
-            if(rs.absolute(1)){
+
+            if (rs.absolute(1)) {
                 return true;
             }
-            
+
         } catch (Exception e) {
-            System.err.println("ERROR: "+e);
-        }finally{
+            System.err.println("ERROR: " + e);
+        } finally {
             try {
-                if(getConnection() != null ) getConnection().close();
-                if(pst != null ) pst.close();
-                if(rs != null ) rs.close();
+                if (getConnection() != null) {
+                    getConnection().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
             } catch (Exception e) {
-                System.err.println("ERROR: "+e);
-            }  
+                System.err.println("ERROR: " + e);
+            }
         }
         return false;
     }
+
     public static void main(String[] args) {
         Querys que = new Querys();
         String usr = JOptionPane.showInputDialog("Usuario");
         String psw = JOptionPane.showInputDialog("Ingrese Password");
-        if(que.auth(usr, psw)){
+        if (que.auth(usr, psw)) {
             System.out.println("Existe el usuario");
-        }else{
+        } else {
             System.out.println("No existe el usuario");
         }
-        
+
     }
 }
