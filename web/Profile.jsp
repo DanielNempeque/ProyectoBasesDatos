@@ -53,21 +53,12 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid" >
-		<div class="col-lg-3" id="profile">
-			<img src="img/profile.jpg" width="180px" height="180px" class="img-circle center-block" id="fotoperfil">
-			<h3 class="text-center">Nombre animal</h3>
-			<label>Raza:</label>
-			<p>Raza animal</p>
-			<label>Sexo:</label>
-			<p>Sexo animal</p>
-			<label>Edad:</label>
-			<p>edad</p>
-			<label>Tipo Sangre:</label>
-			<p>Tipo Sangre</p>
-			
-
-		</div>
-	</div>		
+	<div class="hero-image">
+            <div class="hero-text">
+                <h1>I am John Doe</h1>
+                <p>And I'm a Photographer</p>
+                <button>Hire me</button>
+            </div>
+</div>		
 </body>
 </html>
