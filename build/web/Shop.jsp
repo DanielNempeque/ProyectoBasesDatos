@@ -52,8 +52,9 @@
 
   <!-- end Navbar-->
 <div class="container-fluid" style="padding-top: 10%">
-  
-    <div class="menu">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="menu">
       <div class="mini-menu">
           <ul>
             <li>
@@ -85,10 +86,9 @@
         </div>
       </div>
     </div>
-    
-    <div class="row">
-      <div class="col-lg-3 col-lg-offset-3">
-        <h3 class="text-center">item1</h3>
+    </div>
+    <div class="col-sm-3">      
+      <h3 class="text-center">item1</h3>
         <img class="center-block" src="img/rope.jpg" width="50%">
         <div class="info">
           <h4>$ 50.000</h4>
@@ -98,16 +98,32 @@
           <br>
           <button class="btn btn-lg btn-block">Comprar</button>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <h3 class="text-center">item1</h3>
-        <img class="center-block" src="img/rope.jpg" width="50%">
-      </div>
-      <div class="col-lg-3">
-        <h3 class="text-center">item1</h3>
-        <img class="center-block" src="img/rope.jpg" width="50%">
-      </div>
     </div>
+    <div class="col-sm-3">      
+      <h3 class="text-center">item1</h3>
+        <img class="center-block" src="img/rope.jpg" width="50%">
+        <div class="info">
+          <h4>$ 50.000</h4>
+          <br>
+          <h4><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h4>
+          <h4><i class="fa fa-truck" aria-hidden="true"></i> Envios a todo el pais</h4>
+          <br>
+          <button class="btn btn-lg btn-block">Comprar</button>
+        </div>
+    </div>
+    <div class="col-sm-3">      
+      <h3 class="text-center">item1</h3>
+        <img class="center-block" src="img/rope.jpg" width="50%">
+        <div class="info">
+          <h4>$ 50.000</h4>
+          <br>
+          <h4><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h4>
+          <h4><i class="fa fa-truck" aria-hidden="true"></i> Envios a todo el pais</h4>
+          <br>
+          <button class="btn btn-lg btn-block">Comprar</button>
+        </div>
+    </div>
+  </div>
 </div>
 
 </body>
