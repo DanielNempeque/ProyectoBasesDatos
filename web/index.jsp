@@ -68,7 +68,7 @@
 
 			 <!--end active-->
 			<div class="item">
-				<img src="img/slider2.jpg">
+				<img src="img/pato.png.jpeg">
 			</div>
 			<div class="item">
 				<img src="img/slider3.jpg">
@@ -90,21 +90,74 @@
 
 	<!-- Description -->
 	<div class="container" id="about">
-		<h1 class="text-center">We are a Vet!</h1>
+		<h1 class="text-center">Pet Me!</h1>
+                <h1 class="text-center">Una veterinaria comprometida con el cuidado de nuestras mascotas de compañia</h1>
 		<div class="row">
 			<div class="col-md-6">
-				<h3>Description</h3>
-				<p class="text-justify">Semiotics hell of iceland, gastropub brunch occaecat af listicle hot chicken. Activated charcoal vice pickled put a bird on it in, palo santo butcher flexitarian kogi yr copper mug pariatur labore. Dolore cloud bread pickled thundercats cray gentrify unicorn venmo brunch direct trade four loko aute activated charcoal hashtag. Labore subway tile raw denim intelligentsia, pickled unicorn nisi hot chicken fugiat viral distillery cupidatat. Typewriter taxidermy ugh enamel pin slow-carb +1. Narwhal aesthetic biodiesel dreamcatcher dolore. Plaid portland beard, marfa microdosing jean shorts narwhal vinyl ex blue bottle. Neutra deep v jianbing waistcoat subway tile food truck blue bottle nulla do messenger bag selvage meditation. Squid irure veniam scenester sustainable consectetur bushwick ex single-origin coffee.</p>
-
-				<p class="text-justify">Mustache laboris forage, in 8-bit dreamcatcher salvia yuccie edison bulb tbh. Gochujang do ea jianbing fugiat. Tilde copper mug cold-pressed, nostrud affogato flannel ullamco. Meggings palo santo venmo consequat PBR&B do salvia banjo. Est deserunt roof party viral qui fugiat pabst laboris master cleanse officia, craft beer shoreditch gastropub occaecat. Non sed gentrify messenger bag. Four dollar toast knausgaard asymmetrical, ugh gentrify whatever sustainable chartreuse ut occaecat velit bicycle rights. Etsy sed polaroid chambray, craft beer shabby chic blue bottle schlitz. IPhone tote bag glossier try-hard excepteur, chia thundercats disrupt intelligentsia mumblecore. Pour-over chambray mumblecore single-origin coffee farm-to-table ut lyft lomo air plant XOXO occaecat.</p>
+				<h3>Sobre nosotros</h3>
+				<p class="text-justify">Somos una clínica Veterinaria dedicada a la atención de pequeños animales de compañía y prestamos servicios especializados. 
+                                    Además buscamos mejorar el nivel de la Medicina Veterinaria colocando al servicio de los médicos veterinarios y estudiantes nuestras instalaciones 
+                                    y conocimientos para su apoyo, tareas que con espíritu de servicio y vocación académica realizamos con el ánimo de contribuir a la
+                                    reflexión y la acción sobre la responsabilidad de la veterinaria en la sociedad actual Colombiana.</p>
 
 			</div>
 
 			<div class="col-md-6" style="margin-top: 5%">
-				<img src="img/description.jpg" class="img-responsive">
+				<img src="img/Screenshot_2017-05-19-16-21-43.png" class="img-responsive" width="200" height="200">
 			</div>
 		</div>
 	</div>
+        <!--more description-->
+        <div class="container" id="about_dos">
+                        <div class="col-md-6" style="margin-top: 5%">
+				<img src="img/Onix.jpg" class="img-responsive" width="400" height="400">
+			</div>
+			<div class="row">
+			<div class="col-md-6"> 
+				<h3>Nuestra visión</h3>
+				<p class="text-justify">Atendiendo nuestro compromiso de prestación de servicios Médicos Veterinarios especializados, 
+                                    buscamos en 2018 ser la clínica veterinaria de mayor reconocimiento a nivel local, 
+                                    contribuyendo con esto a mejorar la calidad de vida de nuestras mascotas para alegría de sus propietarios.</p>
+                                <p class="text-justify"> Estos son los valores con los que trabajamos para brindar un buen servicio
+                                    Dedicación y Laboriosidad.
+                                    Ética profesional y Respeto por los animales.
+                                    Gran compromiso y Responsabilidad.
+                                    Trabajo en equipo.</p>
+
+			</div>
+
+			
+		</div>
+	</div>
+        <div class="jumbotron text-center">
+  <h1>SERVICIOS</h1>
+  <p>En PET ME tenemos servicios especializados en el cuidado de tu animal de compañia</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="img/salud_icono.png" class="img-responsive" width="100" height="100">
+      <h3>Cosultas</h3>
+      <p>Diagnosticamos a tu mascota para prevenir y darle los cuidados que necesite.</p>
+      <p>Contamos con personal especializado para suplir cualquier necesidad.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="img/pet_adopt.png" class="img-responsive" width="340" height="340">
+      <h3>Adopciones</h3>
+      <p>Tu primera opción a la hora de incluir un nuevo integrante a tu familia.</p>
+      <p>Contamos con una gran nomina de adopciones con animales de diferentes especies, que buscan 
+      un hogar donde puedan pasar el resto de su vida.</p>
+    </div>
+    <div class="col-sm-4">
+       <img src="img/petshop.png" class="img-responsive" width="110" height="110">
+      <h3>Pet shop</h3>        
+      <p>En nuestra tienda encontrarás todo lo que necesitas para tu mascota accesorios, medicinas</p>
+      <p>Todos nuestros porductos, accesorios y medicamentos cumplen los más altos estandares de calidad pensando en tu seguridad y la de tu mascota</p>
+    </div>
+  </div>
+</div>
+
  
 
 

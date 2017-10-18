@@ -56,80 +56,146 @@
 	<div class="container-fluid">
             <div class="row content" style="padding: 1%">
             <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
-                <h2 class="text-center">Pet Naimu</h2>
-                <img src="img/profile.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
+                <h2 class="text-center">Nombre mascota</h2>
+                <img src="img/foto.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
           </div>
           <br>
 
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <div class="well">
-              <h4>Dashboard</h4>
-              <p>Some text..</p>
+                <h4>Propietario</h4>
+                <p> Nombre </p>
+              
             </div>
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <div class="well">
-                  <h4>Users</h4>
-                  <p>1 Million</p> 
+                  <h4>Fecha de nacimiento</h4>
+                  <p>0000/00/00</p> 
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <div class="well">
-                  <h4>Pages</h4>
-                  <p>100 Million</p> 
+                  <h4>Estado</h4>
+                  <p>No aplica</p> 
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <div class="well">
-                  <h4>Sessions</h4>
-                  <p>10 Million</p> 
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="well">
-                  <h4>Bounce</h4>
-                  <p>30%</p> 
+                  <h4>Consultas</h4>
+                  <p>000/00/00</p> 
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-4">
                 <div class="well">
-                  <p>Text</p> 
-                  <p>Text</p> 
-                  <p>Text</p> 
+                    <h4>Especie</h4>
+                    <p>No aplica</p>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="well">
-                  <p>Text</p> 
-                  <p>Text</p> 
-                  <p>Text</p> 
+                  <h4>Enfermedades</h4> 
+                  <p>No aplica</p> 
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="well">
-                  <p>Text</p> 
-                  <p>Text</p> 
-                  <p>Text</p> 
+                  <h4>Peso</h4> 
+                  <p>No aplica</p> 
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-8">
                 <div class="well">
-                  <p>Text</p> 
+                    <h4>Veterinario</h4>
+                  <p>No aplica</p> 
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="well">
-                  <p>Text</p> 
+                  <h4>Observaciones</h4> 
+                  <p>No aplica</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+        
+      <div class="container-fluid">
+            <div class="row content" style="padding: 1%">
+            <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
+                <h2 class="text-center">Putis</h2>
+                <img src="img/putis.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
+          </div>
+          <br>
+
+          <div class="col-sm-7">
+            <div class="well">
+              <h4>Propietario: Eduard Camilo Rincón</h4>
+              
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="well">
+                  <h4>Fecha de nacimiento</h4>
+                  <p>2016/03/14</p> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <h4>Estado</h4>
+                  <p>No aplica</p> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <h4>Consultas</h4>
+                  <p>2016/05/20</p> 
+                  <p>2016/07/19</p> 
+                  <p>2017/04/27</p> 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="well">
+                    <h4>Especie</h4>
+                 <p>Hámster enano de Roborovski</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <h4>Enfermedades</h4> 
+                  <p>Rinitis</p> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <h4>Peso</h4> 
+                  <p>250 g</p> 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="well">
+                  <h4>Veterinario: Pablito Pérez García</h4> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="well">
+                  <h4>Observaciones</h4> 
+                  <p>No aplica</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </
       </div>		
 </body>
 </html>
