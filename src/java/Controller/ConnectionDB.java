@@ -14,7 +14,7 @@ import java.sql.SQLException;
  *
  * @author Daniel Nempeque
  */
-public class Conexion {
+public class ConnectionDB {
     private String USERNAME = "root"; //USUARIO DE CADA UNO
     private String PASSWORD = "DaNiEl963210"; //PASSWORD DE CADA UNO
     private String HOST = "localhost"; //HOST DEL SERVIDOR
@@ -24,7 +24,9 @@ public class Conexion {
     private String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE; // CADENA DE CONEXION
     private Connection con; //OBETO PARA CONECTARSE DESDE CUALQUIER LUGAR
     
-    public Conexion(){ // CONSTRUCTORA 
+    public ConnectionDB(){ // CONSTRUCTORA 
+    }
+    public void makeConnection(){
         try { //ERRORES COMUNES
             Class.forName(CLASSNAME);
             con = DriverManager.getConnection(URL,USERNAME,PASSWORD);
@@ -36,11 +38,10 @@ public class Conexion {
         }
     }
     
+    
     public Connection getConnection(){
         return con; //RETORNA LA CONEXION A LA BASE DE DATOS
     }
-    public static void main(String[] args) {
-        Conexion con = new Conexion();
-    }
+    
     
 }

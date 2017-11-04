@@ -19,7 +19,7 @@
         <script type="text/javascript" src="js/modal.js"></script>
         <link rel="stylesheet" type="text/css" href="css/_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/_style.css">
-        <link rel="stylesheet" type="text/css" href="css/_modal.css">
+        
         
     </head>
     <body>
@@ -43,8 +43,8 @@
 				<ul class="nav navbar-nav navbar-right ">
 					<li><a href="Shop.jsp">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 					<li><a href="Profile.jsp">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
-					<button type="button" class="btn btn-primary btn-lg" onClick="window.location.href='login.jsp'">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-					<button type="button" class="btn btn-default btn-lg" onClick="window.location.href='Register.jsp'">Register</button>
+                                        <button type="button" class="btn btn-primary btn-lg" id="myLogin">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                                        <button type="button" class="btn btn-default btn-lg" id="myRegister">Register</button>
 				</ul>			
 									
 			</div>
@@ -103,7 +103,7 @@
 			</div>
 
 			<div class="col-md-6" style="margin-top: 5%">
-				<img src="img/Screenshot_2017-05-19-16-21-43.png" class="img-responsive" width="200" height="200">
+				<img src="img/Screenshot_2017-05-19-16-21-43.png" class="img-responsive center-block" width="200" height="200">
 			</div>
 		</div>
 	</div>
@@ -162,7 +162,8 @@
 
 
 <!--register-->
-<div class="modal fade" id="register" role="dialog">
+<form action="Register" method="GET">
+    <div class="modal fade" id="register" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -198,6 +199,40 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>
+    
+</form>
+<form action="Login" method="POST">
+    <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Username" name="txtUsr">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="psw1" placeholder="Password" name="txtPass">
+            </div>
+            <button type="submit" class="btn btn-default btn-success btn-block" id="regi"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</form>
+ 
     </body>
 </html>
