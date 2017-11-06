@@ -155,7 +155,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <img src="img/salud_icono.png" class="img-responsive" width="100" height="100">
+      <img src="img/salud_icono.png" class="img-responsive center-block" width="100" height="100">
       <h3>Cosultas</h3>
       <p>Diagnosticamos a tu mascota para prevenir y darle los cuidados que necesite.</p>
       <p>Contamos con personal especializado para suplir cualquier necesidad.</p>
@@ -168,7 +168,7 @@
       un hogar donde puedan pasar el resto de su vida.</p>
     </div>
     <div class="col-sm-4">
-       <img src="img/petshop.png" class="img-responsive" width="110" height="110">
+       <img src="img/petshop.png" class="img-responsive center-block" width="110" height="110">
       <h3>Pet shop</h3>        
       <p>En nuestra tienda encontrarás todo lo que necesitas para tu mascota accesorios, medicinas</p>
       <p>Todos nuestros porductos, accesorios y medicamentos cumplen los más altos estandares de calidad pensando en tu seguridad y la de tu mascota</p>
