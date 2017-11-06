@@ -4,6 +4,7 @@
     Author     : Daniel Nempeque
 --%>
 
+<%@page import="Model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,8 +44,25 @@
 				<ul class="nav navbar-nav navbar-right ">
 					<li><a href="Shop.jsp">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
 					<li><a href="Profile.jsp">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                        <button type="button" class="btn btn-primary btn-lg" id="myLogin">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-                                        <button type="button" class="btn btn-default btn-lg" id="myRegister">Register</button>
+                                        <%
+                                            
+                                            HttpSession session1 = request.getSession();
+                                            Usuario us = (Usuario) session1.getAttribute("user");
+                                            
+                                            if (us == null){
+                                                
+                                                out.println("<button type='button' class='btn btn-primary btn-lg' id='myLogin'>Login <i class='fa fa-sign-in' aria-hidden='true'></i></button>");
+                                                out.println("<button type='button' class='btn btn-default btn-lg' id='myRegister'>Register</button>");
+                                            
+                                            }else if(us.getUserType().equalsIgnoreCase("Administrador")){
+                                                out.println("<button type='button' class='btn btn-primary btn-lg' id='myLogin'>Admin <i class='fa fa-sign-in' aria-hidden='true'></i></button>");   
+                                            }else if(us.getUserType().equalsIgnoreCase("Cliente")){
+                                                request.getRequestDispatcher("Profile.jsp").forward(request, response);
+                                            }
+                                            
+                                            
+                                            
+                                        %>
 				</ul>			
 									
 			</div>

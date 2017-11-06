@@ -40,11 +40,11 @@ public class LoginAuth extends HttpServlet {
             if(us2.getUserType().equals("Administrador")){
                 HttpSession session = request.getSession();
                 session.setAttribute("user", us2);
-                request.getRequestDispatcher("Admin").forward(request, response);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }else{
                 HttpSession session = request.getSession();
                 session.setAttribute("user", us2);
-                request.getRequestDispatcher("Profile").forward(request, response);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             
         }else{
