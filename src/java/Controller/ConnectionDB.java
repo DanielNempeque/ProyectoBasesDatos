@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class ConnectionDB {
     private String USERNAME = "root"; //USUARIO DE CADA UNO
-    private String PASSWORD = "DaNiEl963210"; //PASSWORD DE CADA UNO
+    private String PASSWORD = ""; //PASSWORD DE CADA UNO
     private String HOST = "localhost"; //HOST DEL SERVIDOR
     private String PORT = "3306"; //ESTE ES EL PUERTO QUE TIENE MYSQL POR DEFECTO O POR LO MENOS EN LA MIA
     private String DATABASE = "proyecto_final"; //ASI TENGO YO EL NOMBRE; NO COMO PETME
@@ -37,6 +37,13 @@ public class ConnectionDB {
             System.err.println("ERROR: "+e);
         }
     }
+    public Connection setConeccion() throws ClassNotFoundException,
+                SQLException, InstantiationException, IllegalAccessException {
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		con = DriverManager.getConnection("jdbc:mysql://" + HOST + ":"
+				+ PORT + "/" + DATABASE, USERNAME, PASSWORD);
+		return con;
+	}
     
     
     public Connection getConnection(){
