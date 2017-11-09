@@ -5,25 +5,21 @@
  */
 package Controller;
 
-import Gestion.GestionProducto;
-import Model.Producto;
+import Gestion.GestionUsuario;
+import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.table.DefaultTableModel;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author JORDAN
  */
-public class ConsultProductType extends HttpServlet {
+public class LoginPurchase extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,30 +32,30 @@ public class ConsultProductType extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");                
-        GestionProducto ges = new GestionProducto();        
-        DefaultTableModel mo = null;
-        try {
-            mo = ges.getProductsType(Integer.parseInt(request.getParameter("tipo")));
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        ArrayList<Producto> products = new ArrayList<>();
-        Producto p;
-        for(int x=0;x<mo.getRowCount();x++)
-        {
-            p = new Producto((int)mo.getValueAt(x, 0),(String)mo.getValueAt(x, 1),(String)mo.getValueAt(x, 2),
-            (int)mo.getValueAt(x, 3),(int)mo.getValueAt(x, 4));            
-            products.add(p);
-        }                      
-        request.setAttribute("products", products);
-        request.getRequestDispatcher("Shop.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        GestionUsuario gest = new GestionUsuario();
+        
+        String user, pass;
+        user = request.getParameter("txtUsr");
+        pass = request.getParameter("txtPass");
+        
+        Usuario us = new Usuario(user, pass);
+        
+        Usuario us2 = gest.AuthCliente(us);
+        
+        if(gest.AuthClienteBoolean(us)){
+            if(us2.getUserType().equals("Administrador")){
+                HttpSession session = request.getSession();
+                session.setAttribute("user", us2);                
+            }else{
+                HttpSession session = request.getSession();
+                session.setAttribute("user", us2);                
+            }            
+        }else{
+            HttpSession session = request.getSession();
+            session.setAttribute("error", "No se encontro el usuario");            
+        }        
+        request.getRequestDispatcher("Factura").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

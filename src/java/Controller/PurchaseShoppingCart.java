@@ -59,8 +59,7 @@ public class PurchaseShoppingCart extends HttpServlet {
             productsShop = (ArrayList<Producto>) request.getSession().getAttribute("productsShop");
         }
         productsShop.add(p);
-        request.getSession().setAttribute("productsShop", productsShop);
-        request.setAttribute("productsShop", productsShop);
+        request.getSession().setAttribute("productsShop", productsShop);        
         request.getRequestDispatcher("Shop.jsp").forward(request, response);
     }
 

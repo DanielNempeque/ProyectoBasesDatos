@@ -28,6 +28,22 @@
         <servlet-name>PurchaseShoppingCart</servlet-name>
         <servlet-class>Controller.PurchaseShoppingCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PurchaseOrder</servlet-name>
+        <servlet-class>Controller.PurchaseOrder</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginPurchase</servlet-name>
+        <servlet-class>Controller.LoginPurchase</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CompletePurchase</servlet-name>
+        <servlet-class>Controller.CompletePurchase</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultProductTag</servlet-name>
+        <servlet-class>Controller.ConsultProductTag</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -55,6 +71,22 @@
     <servlet-mapping>
         <servlet-name>PurchaseShoppingCart</servlet-name>
         <url-pattern>/AProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PurchaseOrder</servlet-name>
+        <url-pattern>/Factura</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginPurchase</servlet-name>
+        <url-pattern>/LoginPurchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CompletePurchase</servlet-name>
+        <url-pattern>/TerminarCompra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultProductTag</servlet-name>
+        <url-pattern>/RTag</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

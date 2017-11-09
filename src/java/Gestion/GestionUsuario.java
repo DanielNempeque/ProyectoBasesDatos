@@ -32,6 +32,7 @@ public class GestionUsuario extends Controller.ConnectionDB{
             rs = pst.executeQuery();
             
             while(rs.next()){
+                System.out.print(rs.getInt(1));
                 String idLogin = rs.getString(1);
                 String Usuario = rs.getString(2);
                 String Password = rs.getString(2);

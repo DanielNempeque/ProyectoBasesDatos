@@ -50,18 +50,7 @@ public class ConsultProductName extends HttpServlet {
             p = new Producto((int)mo.getValueAt(x, 0),(String)mo.getValueAt(x, 1),(String)mo.getValueAt(x, 2),
             (int)mo.getValueAt(x, 3),(int)mo.getValueAt(x, 4));            
             products.add(p);
-        }
-        ArrayList<Producto> productsShop = null;       
-        if(request.getSession().getAttribute("productsShop")==null)
-        {
-            productsShop = new ArrayList<>();
-        }
-        else
-        {
-            productsShop = (ArrayList<Producto>) request.getSession().getAttribute("productsShop");
-        }        
-        request.getSession().setAttribute("productsShop", productsShop);
-        request.setAttribute("productsShop", productsShop);       
+        }            
         request.setAttribute("products", products);
         request.getRequestDispatcher("Shop.jsp").forward(request, response);             
             }

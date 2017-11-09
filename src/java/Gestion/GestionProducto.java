@@ -135,6 +135,32 @@ public class GestionProducto {
                 conn.close();
             return mo;
     }
+    public DefaultTableModel getProductsTag(int Tag) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
+    {
+            Connection conn = connMySQL.setConeccion();   
+            ResultSet rs;
+            DefaultTableModel mo = new DefaultTableModel(){
+            @Override
+            public boolean isCellEditable(int rowIndex,int columnIndex){return false;}
+            };
+            String[] columns = {"ID","Nombre","Imagen","Cantidad","Precio"};
+            mo.setColumnIdentifiers(columns);
+            Object[] fila = new Object[5];
+            ps = conn.prepareStatement("select p.id_producto,Nombre,Imagen,Cantidad,Precio from Producto p inner join tag_producto t on t.id_producto = p.id_producto\n" +
+"where t.id_tag = ?;");	
+            ps.setInt(1,Tag);
+		rs = ps.executeQuery();
+		while (rs.next()) {
+			fila[0] = rs.getInt(1);
+                        fila[1] = rs.getString(2);
+                        fila[2] = rs.getString(3);
+                        fila[3] = rs.getInt(4);
+                        fila[4] = rs.getInt(5);
+                        mo.addRow(fila);
+                }
+                conn.close();
+            return mo;
+    }
     public int getMin() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
     {
             Connection conn = connMySQL.setConeccion();   
