@@ -43,7 +43,7 @@
 			<div class="collapse navbar-collapse" id="MyNavbar">
 				<ul class="nav navbar-nav navbar-right ">
 					<li><a href="Shop.jsp">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-					<li><a href="Profile.jsp">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
+					
                                         <%
                                             
                                             HttpSession session1 = request.getSession();
@@ -57,10 +57,13 @@
                                             }else if(us.getUserType().equalsIgnoreCase("Administrador")){
                                                 out.println("<button type='button' class='btn btn-primary btn-lg' id='myLogin'>Admin <i class='fa fa-sign-in' aria-hidden='true'></i></button>");   
                                             }else if(us.getUserType().equalsIgnoreCase("Cliente")){
+                                                out.println("<form action='Close' method='GET'>");
+                                                out.println("<button type='button submit' class='btn btn-primary btn-lg' >Log Out <i class='fa fa-sign-in' aria-hidden='true'></i></button>");
+                                                out.println("</form>");
+                                                out.println("<li><a href='Profile.jsp'>Perfil <i class='fa fa-user' aria-hidden='true'></i></a></li>");
                                                 request.getRequestDispatcher("Profile.jsp").forward(request, response);
                                             }
-                                            
-                                            
+                                                                                       
                                             
                                         %>
 				</ul>			
