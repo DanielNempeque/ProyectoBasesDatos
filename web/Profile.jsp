@@ -59,13 +59,13 @@
 	</nav>
         
         <%
-            HttpSession sess = request.getSession();
+            /*HttpSession sess = request.getSession();
             Usuario  usuario = (Usuario) sess.getAttribute("user");            
             if(usuario != null){
                 GestionCliente gest = new GestionCliente();
                 Cliente cli = gest.getClienteidCliente(usuario.getIdCliente());
                 out.println("<h1>Hola"+cli.getName()+"<h1>");
-            }
+            }*/
         
         %>
 
