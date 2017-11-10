@@ -6,6 +6,7 @@
 
 <%@page import="Model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="false"%>
 <!DOCTYPE html>
 <html>
     <head>
