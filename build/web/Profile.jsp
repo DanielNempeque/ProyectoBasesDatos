@@ -4,7 +4,12 @@
     Author     : Daniel Nempeque
 --%>
 
+<%@page import="Model.Cliente"%>
+<%@page import="Gestion.GestionCliente"%>
+<%@page import="Model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,6 +57,17 @@
 			</div>
 		</div>
 	</nav>
+        
+        <%
+            HttpSession sess = request.getSession();
+            Usuario  usuario = (Usuario) sess.getAttribute("user");            
+            if(usuario != null){
+                GestionCliente gest = new GestionCliente();
+                Cliente cli = gest.getClienteidCliente(usuario.getIdCliente());
+                out.println("<h1>Hola"+cli.getName()+"<h1>");
+            }
+        
+        %>
 
 	<div class="container-fluid">
             <div class="row content" style="padding: 1%">

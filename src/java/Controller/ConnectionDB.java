@@ -37,6 +37,13 @@ public class ConnectionDB {
             System.err.println("ERROR: "+e);
         }
     }
+    public Connection setConeccion() throws ClassNotFoundException,
+                SQLException, InstantiationException, IllegalAccessException {
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		con = DriverManager.getConnection("jdbc:mysql://" + HOST + ":"
+				+ PORT + "/" + DATABASE, USERNAME, PASSWORD);
+		return con;
+	}
     
     
     public Connection getConnection(){

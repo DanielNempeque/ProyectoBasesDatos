@@ -10,8 +10,8 @@ package Model;
  * @author Daniel Nempeque
  */
 public class Cliente {
+
     private String Name;
-    private String Mail;
     private String Phone;
     private String Document;
     private String BirthDate;
@@ -19,10 +19,10 @@ public class Cliente {
     private String idClient;
     private String idVet;
     private String vetName;
+    private String idLogin;
 
-    public Cliente(String Name, String Mail, String Phone, String Document, String BirthDate, String Gender, String idClient, String idVet, String vetName) {
+    public Cliente(String Name, String Phone, String Document, String BirthDate, String Gender, String idClient, String idVet, String vetName, String idLogin) {
         this.Name = Name;
-        this.Mail = Mail;
         this.Phone = Phone;
         this.Document = Document;
         this.BirthDate = BirthDate;
@@ -30,6 +30,7 @@ public class Cliente {
         this.idClient = idClient;
         this.idVet = idVet;
         this.vetName = vetName;
+        this.idLogin = idLogin;
     }
 
     public String getName() {
@@ -38,14 +39,6 @@ public class Cliente {
 
     public void setName(String Name) {
         this.Name = Name;
-    }
-
-    public String getMail() {
-        return Mail;
-    }
-
-    public void setMail(String Mail) {
-        this.Mail = Mail;
     }
 
     public String getPhone() {
@@ -103,6 +96,13 @@ public class Cliente {
     public void setVetName(String vetName) {
         this.vetName = vetName;
     }
-    
-    
+
+    public String getIdLogin() {
+        return idLogin;
+    }
+
+    public void setIdLogin(String idLogin) {
+        this.idLogin = idLogin;
+    }
+
 }

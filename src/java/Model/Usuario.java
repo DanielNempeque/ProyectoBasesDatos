@@ -14,6 +14,7 @@ public class Usuario {
     private String User;
     private String Password;
     private String UserType;
+    private String idCliente;
 
     public Usuario(String User, String Password, String UserType) {
         this.User = User;
@@ -21,6 +22,13 @@ public class Usuario {
         this.UserType = UserType;
     }
 
+    public Usuario(String idLogin, String User, String Password, String UserType, String idCliente) {
+        this.idLogin = idLogin;
+        this.User = User;
+        this.Password = Password;
+        this.UserType = UserType;
+        this.idCliente = idCliente;
+    }
     public Usuario(String idLogin, String User, String Password, String UserType) {
         this.idLogin = idLogin;
         this.User = User;
@@ -64,6 +72,14 @@ public class Usuario {
 
     public void setUserType(String UserType) {
         this.UserType = UserType;
+    }
+
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
     }
     
     
