@@ -12,6 +12,7 @@ package Model;
 public class Enfermedad {
     private String idEnfermedad;
     private String idTipoEnfermedad;
+    private String NombretipoE;
     private String Nombre;
     private String Descripcion;
 
@@ -26,6 +27,12 @@ public class Enfermedad {
         this.idTipoEnfermedad = idTipoEnfermedad;
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
+    }
+    public Enfermedad(int idEnfermedad, String Nombre, String Descripcion, String NombreTipo){
+        this.idEnfermedad = idEnfermedad+"";
+        this.Nombre = Nombre;
+        this.Descripcion = Descripcion;
+        this.NombretipoE = NombreTipo;
     }
     
 
@@ -60,6 +67,15 @@ public class Enfermedad {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
+
+    public String getNombretipoE() {
+        return NombretipoE;
+    }
+
+    public void setNombretipoE(String NombretipoE) {
+        this.NombretipoE = NombretipoE;
+    }
+    
     
     
 }
