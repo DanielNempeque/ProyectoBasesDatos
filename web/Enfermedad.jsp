@@ -101,16 +101,31 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#Busca">Buscar Consultas</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Busca">Buscar Enfermedad</a>
                         </h4>
                     </div>
                     <div id="Busca" class="panel-collapse collapse">
                         <div class="panel-body">
                             <form method="get" action="">
                                 <div class="form-inline">
-                                    <label for="idCliente">Documento Cliente</label>
-                                    <input type="text" class="form-control" id="idCliente" name="docPersona" placeholder="Documento persona">
-                                    <input name="Submit" class="btn btn-primary" type="submit" onClick="MM_openBrWindow('index.jsp', 'Popup', 'width=500,height=700')" value="Submit">
+                                    <label for="idEnf">Nombre Enfermedad</label>
+                                    <input type="text" class="form-control" id="idEnf" name="NombreEnf" placeholder="Nombre enfermedad">
+                                    <input name="Submit" class="btn btn-primary" type="submit" value="Buscar">
+                                    <%
+                                        String docPersona = request.getParameter("NombreEnf");
+
+                                        Enfermedad enfer = enf.getEnfermedadNombre(docPersona);
+
+                                        if (enfer == null) {
+                                            out.println("<h4>NO se encontro la enfermedad</h4>");
+                                        } else if (enfer != null) {
+                                            out.println("<br><strong>Nombre: </strong>" + enfer.getNombre());
+                                            out.println("<br><strong>Tipo Enfermedad: </strong>" + enfer.getNombretipoE());
+                                            out.println("<br><strong>Descripcion: </strong>" + enfer.getDescripcion());
+                                        }
+
+
+                                    %>
                                 </div>
                             </form>
                         </div>
@@ -129,18 +144,34 @@
                                         <th>Tipo Enfermedad</th>
                                         <th>Descripcion</th>
                                     </tr>
-                                    <%
-                                        GestionEnfermedad gest = new GestionEnfermedad();
+                                    <%                                        GestionEnfermedad gest = new GestionEnfermedad();
                                         ArrayList<Enfermedad> enfermedades = new ArrayList<Enfermedad>(gest.GetEnfermedades());
-                                        for(Enfermedad  enfer : enfermedades){
+                                        for (Enfermedad enferm : enfermedades) {
                                             out.print("<tr>");
-                                            out.print("<td>"+enfer.getNombre()+"</td>");
-                                            out.print("<td>"+enfer.getNombretipoE()+"</td>");
-                                            out.print("<td>"+enfer.getDescripcion()+"</td>");
+                                            out.print("<td class='text-justify'>" + enferm.getNombre() + "</td>");
+                                            out.print("<td class='text-justify'>" + enferm.getNombretipoE() + "</td>");
+                                            out.print("<td class='text-justify'>" + enferm.getDescripcion() + "</td>");
                                             out.print("</tr>");
                                         }
                                     %>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#Remove">Elimina Enfermedad</a>
+                            </h4>
+                        </div>
+                        <div id="Remove" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <label for="idEnf">Nombre Enfermedad</label>
+                                    <input type="text" class="form-control" id="idEnf" name="NombreEnf" placeholder="Nombre enfermedad">
+                                    <input name="Submit" class="btn btn-primary" type="submit" value="Buscar">
+                                    <%
+                                        
+                                    %>
                             </div>
                         </div>
                     </div>
@@ -150,6 +181,7 @@
                 function MM_openBrWindow(theURL, winName, features) { //v2.0
                     window.open(theURL, winName, features);
                 }
+                
             </script>
     </body>
 </html>

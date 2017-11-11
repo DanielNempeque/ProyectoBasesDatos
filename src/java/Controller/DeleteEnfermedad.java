@@ -5,26 +5,20 @@
  */
 package Controller;
 
-import Gestion.GestionEnfermedad;
-import Model.Enfermedad;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.Thread.sleep;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Daniel Nempeque
  */
-@WebServlet(name = "CreateEnfermedad", urlPatterns = {"/CreateEnfermedad"})
-public class CreateEnfermedad extends HttpServlet {
+@WebServlet(name = "DeleteEnfermedad", urlPatterns = {"/DeleteEnfermedad"})
+public class DeleteEnfermedad extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,38 +33,16 @@ public class CreateEnfermedad extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
-            
-            GestionEnfermedad enf = new GestionEnfermedad();
-            String NombreTipo = request.getParameter("TipoEnfermedad");
-
-            String idTipoEnf = enf.getIdTipoEnfermedad(NombreTipo) + "";
-
-            String Nombre = request.getParameter("NombreEnf");
-            String Descripcion = request.getParameter("Desc");
-
-            Enfermedad enfermedad = new Enfermedad(idTipoEnf, Nombre, Descripcion);
-            enf.createEnfermedad(enfermedad);
-
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>\n"
-                    + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
-                    + "        <title>PET ME</title>\n"
-                    + "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n"
-                    + "      	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n"
-                    + "      	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n"
-                    + "      	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n" 
-                    + "        <script type=\"text/javascript\" src=\"js/modal.js\"></script>\n"
-                    + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_navbar.css\">\n"
-                    + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_style.css\">\n"
-                    + "    </head>");
+            out.println("<head>");
+            out.println("<title>Servlet DeleteEnfermedad</title>");            
+            out.println("</head>");
             out.println("<body>");
-            out.println("<h1 class='text-center'>Se Agrego Correctamente</h1><br>");
-            out.println("<div class='container'style='margin: 5%'><button  type='button' class='btn btn-primary btn-lg btn-block' id='myLogin' onClick=\"window.location.href='Enfermedad.jsp'\">Volver</button></div>");   
+            out.println("<h1>Servlet DeleteEnfermedad at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-
         }
     }
 
