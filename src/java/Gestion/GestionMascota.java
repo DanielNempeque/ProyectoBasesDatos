@@ -22,7 +22,7 @@ public class GestionMascota extends Controller.ConnectionDB {
        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
         System.out.println(idCliente);
        try {
-           String Query = "SELECT A.Nombre, A.Fecha_nacimiento, A.Peso, T.Descripcion, E.Nombre\n" +
+           String Query = "SELECT A.Nombre, TIMESTAMPDIFF(YEAR, A.Fecha_nacimiento, CURDATE()) AS Edad, A.Peso, T.Descripcion, E.Nombre\n" +
                             "FROM Estado E INNER JOIN Animal A ON A.id_estado=E.id_estado\n" +
                             "INNER JOIN Tipo_Animal T ON T.id_tipoanimal= A.id_tipoanimal\n" +
                             "INNER JOIN Cliente C ON C.id_cliente=A.id_cliente\n" +
