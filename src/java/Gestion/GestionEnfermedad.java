@@ -57,14 +57,14 @@ public class GestionEnfermedad extends Controller.ConnectionDB {
         super.makeConnection();
         PreparedStatement pst = null;
         int rs = 0;
-        ArrayList<TipoEnfermedad> tiposEnfermedad = new ArrayList<>();
         try {
-            String Query = "INSET INTO Enfermedad (Nombre, Descripcion, id_tipoenfermedad) values (?,?,?)";
+            String Query = "INSERT INTO Enfermedad (Nombre, Descripcion, id_tipoenfermedad) values (?,?,?)";
             pst = getConnection().prepareStatement(Query);
             pst.setString(1, enfermedad.getNombre());
             pst.setString(2, enfermedad.getDescripcion());
-            pst.setInt(1, Integer.parseInt(enfermedad.getIdTipoEnfermedad()));
+            pst.setInt(3, Integer.parseInt(enfermedad.getIdTipoEnfermedad()));
             rs = pst.executeUpdate();
+            System.out.println("Se creo correctamentes");
 
             
         } catch (Exception e) {
