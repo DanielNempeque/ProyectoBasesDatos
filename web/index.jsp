@@ -65,7 +65,8 @@
                                                 out.println("<button type='submit' class='btn btn-primary btn-lg'>Log Out <i class='fa fa-sign-in' aria-hidden='true'></i></button>");   
                                             %>
                                         </form>
-                                        <%
+                                        <%  
+                                                
                                                 request.getRequestDispatcher("Profile.jsp").forward(request, response);
                                             }
                                             

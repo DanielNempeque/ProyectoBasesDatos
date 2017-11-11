@@ -22,7 +22,7 @@
         <link rel="stylesheet" type="text/css" href="css/_style.css">
     </head>
     <body>
-         <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 10%">
+         <nav class="navbar navbar-inverse" style="height: 10%">
 		<div class="container-fluid">
 		<!-- Media menu button-->
 
@@ -41,31 +41,89 @@
 			<div class="collapse navbar-collapse" id="MyNavbar">
 				<ul class="nav navbar-nav navbar-right ">
 					<li><a href="Shop.jsp">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-					
-                                        <%
-                                            
-                                            HttpSession session1 = request.getSession();
-                                            Usuario us = (Usuario) session1.getAttribute("user");
-                                            
-                                            if (us == null){
-                                                out.println("<li><a href='#' id='perfil'>Perfil <i class='fa fa-user' aria-hidden='true'></i></a></li>");
-                                                out.println("<button type='button' class='btn btn-primary btn-lg' id='myLogin'>Login <i class='fa fa-sign-in' aria-hidden='true'></i></button>");
-                                                out.println("<button type='button' class='btn btn-default btn-lg' id='myRegister'>Register</button>");
-                                            
-                                            }else if(us.getUserType().equalsIgnoreCase("Administrador")){
-                                                request.getRequestDispatcher("Doctor.jsp").forward(request, response);
-                                            }else if(us.getUserType().equalsIgnoreCase("Cliente")){
-                                                out.println("<li><a href='Profile.jsp'>Perfil <i class='fa fa-user' aria-hidden='true'></i></a></li>");
-                                                request.getRequestDispatcher("Profile.jsp").forward(request, response);
-                                            }
-                                            
-                                            
-                                            
-                                        %>
+					<li><a href="Profile.jsp">Perfil <i class="fa fa-user" aria-hidden="true"></i></a></li>
+					<button type="button" class="btn btn-primary btn-lg" onClick="window.location.href='login.jsp'">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+					<button type="button" class="btn btn-default btn-lg" onClick="window.location.href='Register.jsp'">Register</button>
 				</ul>			
 									
 			</div>
 		</div>
 	</nav>
+        <div class="container">
+        <h1>Consultas</h1>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#ingresa">Ingresar Consulta</a>
+              </h4>
+            </div>
+            <div id="ingresa" class="panel-collapse collapse in">
+              <div class="panel-body">
+              	<form method="get" action="">
+              		<div class="form-group">
+						<div class="form-inline">
+							<div class="form-group">
+								<label for="idPersona">Documento dueño</label>
+								<input type="text" class="form-control" id="idPersona" name="docPersona" placeholder="Doc Identidad">
+							</div>						
+							<div class="form-group">
+								<button class="btn btn-primary">Buscar Mascotas</button>
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+								<select class="form-control">
+									<option>uno</option>
+								</select>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label for="idVet">Documento Veterninario</label>
+						<input type="text" class="form-control" id="idVet" name="docVeterinario" placeholder="Doc Veterninario">
+					</div>
+					<div class="form-group">
+						<label for="datetime">Fecha</label>
+						<input type='text' class="form-control" id='datetime'>
+						
+					</div>
+					<div class="form-group">
+						<label for="descripcion">Descripcion</label>
+						<textarea class="form-control" rows="4" id="descripcion" name="Desc" placeholder="Descripcion"></textarea>
+					</div>
+
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Crear</button>
+				</form>
+			</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
     </body>
 </html>
