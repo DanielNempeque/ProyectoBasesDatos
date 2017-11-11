@@ -4,6 +4,9 @@
     Author     : Daniel Nempeque
 --%>
 
+<%@page import="Model.Mascota"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Gestion.GestionMascota"%>
 <%@page import="Model.Cliente"%>
 <%@page import="Gestion.GestionCliente"%>
 <%@page import="Model.Usuario"%>
@@ -30,6 +33,7 @@
 		<link rel="stylesheet" type="text/css" href="css/_profile.css">
 	</head>
     <body>
+        <% try{%>
         <nav class="navbar navbar-inverse" style="height: 10%">
 		<div class="container-fluid">
 		<!-- Media menu button-->
@@ -83,21 +87,22 @@
 		</div>
 	</nav>
         
-        <%
-            /*HttpSession sess = request.getSession();
-            Usuario  usuario = (Usuario) sess.getAttribute("user");            
-            if(usuario != null){
-                GestionCliente gest = new GestionCliente();
-                Cliente cli = gest.getClienteidCliente(usuario.getIdCliente());
-                out.println("<h1>Hola"+cli.getName()+"<h1>");
-            }*/
-        
-        %>
-
 	<div class="container-fluid">
             <div class="row content" style="padding: 1%">
             <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
-                <h2 class="text-center">Nombre mascota</h2>
+                <select class="form-control">
+                    
+                <% 
+                    
+                GestionMascota gestMas = new GestionMascota();
+                ArrayList<Mascota> mas = new ArrayList<Mascota>(gestMas.getMascotaidCliente(us.getIdCliente()));
+                for(Mascota mascotas :mas){
+                out.println("<option>"+mascotas.getNombre()+"</option>");
+                 }
+                %>                     
+                    
+                </select>
+                
                 <img src="img/foto.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
           </div>
           <br>
@@ -237,6 +242,9 @@
           </div>
         </div>
       </
-      </div>		
+      </div>
+      <%}catch(Exception e){
+      System.err.println("ERROR: " + e);
+}%>
 </body>
 </html>

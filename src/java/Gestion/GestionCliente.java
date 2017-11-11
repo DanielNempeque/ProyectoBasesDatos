@@ -52,4 +52,40 @@ public class GestionCliente extends Controller.ConnectionDB {
        return null;
    }
    
+   
+    public Cliente getNombreidCliente(String idCliente){
+       super.makeConnection();
+       PreparedStatement pst = null;
+       ResultSet rs = null;
+       Cliente cli=null;
+       try {
+           String Query = "SELECT Nombre FROM Cliente WHERE id_cliente=?";
+           pst = getConnection().prepareStatement(Query);
+           pst.setInt(1, Integer.parseInt(idCliente));
+           rs = pst.executeQuery();
+           
+           while(rs.next()){
+               String nombre= rs.getString(1);
+               cli = new Cliente(nombre);
+           } 
+           return cli;
+       } catch (Exception e) {
+           System.err.println("ERROR: " + e);
+       }finally{
+           try {
+               if(getConnection() != null){
+               getConnection().close();
+                }
+                if(pst != null){
+                    pst.close();
+                }
+                if(rs != null){
+                    pst.close();
+                }
+           } catch (Exception e) {
+               System.err.println("ERROR: " + e);
+           }
+       }
+       return null;
+   }
 }
