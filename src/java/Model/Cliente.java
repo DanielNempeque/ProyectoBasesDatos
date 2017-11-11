@@ -33,6 +33,9 @@ public class Cliente {
         this.idLogin = idLogin;
     }
 
+    public Cliente() {
+    }
+
     public Cliente(String nombre) {
         this.Name = nombre;
     }
