@@ -33,6 +33,10 @@ public class Cliente {
         this.idLogin = idLogin;
     }
 
+    public Cliente(String nombre) {
+        this.Name = nombre;
+    }
+
     public String getName() {
         return Name;
     }
