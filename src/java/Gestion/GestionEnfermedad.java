@@ -160,11 +160,12 @@ public class GestionEnfermedad extends Controller.ConnectionDB {
         }
         return null;
     }
-    public Enfermedad getEnfermedadNombre(String pNombre){
+
+    public Enfermedad getEnfermedadNombre(String pNombre) {
         super.makeConnection();
         PreparedStatement pst = null;
         ResultSet rs = null;
-        Enfermedad enf =  null;
+        Enfermedad enf = null;
         try {
             String Query = "SELECT E.id_enfermedad, E.nombre, E.descripcion, T.Nombre FROM Enfermedad E\n"
                     + "INNER JOIN Tipo_Enfermedad T ON E.id_tipoenfermedad = T.id_tipoenfermedad\n"
@@ -172,8 +173,8 @@ public class GestionEnfermedad extends Controller.ConnectionDB {
             pst = getConnection().prepareStatement(Query);
             pst.setString(1, pNombre);
             rs = pst.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 int id = rs.getInt(1);
                 String Nombre = rs.getString(2);
                 String Desc = rs.getString(3);
@@ -181,7 +182,7 @@ public class GestionEnfermedad extends Controller.ConnectionDB {
                 enf = new Enfermedad(id, Nombre, Desc, NombreT);
             }
             return enf;
-            
+
         } catch (Exception e) {
             System.err.println("ERROR: " + e);
         } finally {
@@ -199,20 +200,49 @@ public class GestionEnfermedad extends Controller.ConnectionDB {
                 System.err.println("ERROR: " + e);
             }
         }
-        
+
         return null;
     }
-    public void eliminaEnfermedad(String pNombre){
+
+    public void eliminaEnfermedad(String pNombre) {
         super.makeConnection();
         PreparedStatement pst = null;
         int rs = 0;
         try {
-            String Query = "Delete from table Enfermedad WHERE Nombre = ?;";
+            String Query = "Delete from Enfermedad WHERE Nombre = ?";
             pst = getConnection().prepareStatement(Query);
             pst.setString(1, pNombre);
             rs = pst.executeUpdate();
-            
-                     
+
+        } catch (Exception e) {
+            System.err.println("ERROR: " + e);
+        } finally {
+            try {
+                if (getConnection() != null) {
+                    getConnection().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+            } catch (Exception e) {
+                System.err.println("ERROR: " + e);
+            }
+        }
+    }
+
+    public void eliminaConsultaEnfermedad(String pNombre) {
+        super.makeConnection();
+        PreparedStatement pst = null;
+        int rs = 0;
+        try {
+            String Query = "Delete from Consulta_enfermedad\n"
+                    + "WHERE id_Enfermedad IN (SELECT C.id_Enfermedad FROM Enfermedad E INNER JOIN (Select * from Consulta_enfermedad) C ON E.id_enfermedad = C.id_enfermedad \n"
+                    + "WHERE E.Nombre =?\n"
+                    + ")";
+            pst = getConnection().prepareStatement(Query);
+            pst.setString(1, pNombre);
+            rs = pst.executeUpdate();
+
         } catch (Exception e) {
             System.err.println("ERROR: " + e);
         } finally {

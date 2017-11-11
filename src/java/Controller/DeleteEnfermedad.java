@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Gestion.GestionEnfermedad;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -34,13 +35,27 @@ public class DeleteEnfermedad extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            Gestion.GestionEnfermedad gest = new GestionEnfermedad();
+            String NombreEnfermedad = request.getParameter("NombreEliminaEnf");
+            gest.eliminaConsultaEnfermedad(NombreEnfermedad);
+            gest.eliminaEnfermedad(NombreEnfermedad);
+           
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet DeleteEnfermedad</title>");            
-            out.println("</head>");
+            out.println("<head>\n"
+                    + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                    + "        <title>PET ME</title>\n"
+                    + "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n"
+                    + "      	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n"
+                    + "      	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n"
+                    + "      	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n" 
+                    + "        <script type=\"text/javascript\" src=\"js/modal.js\"></script>\n"
+                    + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_navbar.css\">\n"
+                    + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_style.css\">\n"
+                    + "    </head>");
             out.println("<body>");
-            out.println("<h1>Servlet DeleteEnfermedad at " + request.getContextPath() + "</h1>");
+            out.println("<h1 class='text-center'>Se Elimino Correctamente</h1><br>");
+            out.println("<div class='container'style='margin: 5%'><button  type='button' class='btn btn-primary btn-lg btn-block' id='myLogin' onClick=\"window.location.href='Enfermedad.jsp'\">Volver</button></div>");   
             out.println("</body>");
             out.println("</html>");
         }

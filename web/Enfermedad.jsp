@@ -166,12 +166,13 @@
                         </div>
                         <div id="Remove" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <label for="idEnf">Nombre Enfermedad</label>
-                                    <input type="text" class="form-control" id="idEnf" name="NombreEnf" placeholder="Nombre enfermedad">
-                                    <input name="Submit" class="btn btn-primary" type="submit" value="Buscar">
-                                    <%
-                                        
-                                    %>
+                                <div class="form-inline">
+                                    <form action="DeleteEnfermedad" method="GET">
+                                        <label for="idEnfe">Nombre Enfermedad</label>
+                                        <input type="text" class="form-control" id="idEnfe" name="NombreEliminaEnf" placeholder="Nombre enfermedad">
+                                        <input name="Submit" class="btn btn-primary" type="submit" value="Buscar">
+                                    </form>                                    
+                                </div>
                             </div>
                         </div>
                     </div>
