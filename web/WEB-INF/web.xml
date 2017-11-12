@@ -44,6 +44,22 @@
         <servlet-name>ConsultProductTag</servlet-name>
         <servlet-class>Controller.ConsultProductTag</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultProduct</servlet-name>
+        <servlet-class>Controller.ConsultProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterProduct</servlet-name>
+        <servlet-class>Controller.RegisterProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UDProducts</servlet-name>
+        <servlet-class>Controller.UDProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateProduct</servlet-name>
+        <servlet-class>Controller.UpdateProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -87,6 +103,22 @@
     <servlet-mapping>
         <servlet-name>ConsultProductTag</servlet-name>
         <url-pattern>/RTag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultProduct</servlet-name>
+        <url-pattern>/RProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterProduct</servlet-name>
+        <url-pattern>/RegistrarProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UDProducts</servlet-name>
+        <url-pattern>/Mofidicar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateProduct</servlet-name>
+        <url-pattern>/ActualizarProducto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

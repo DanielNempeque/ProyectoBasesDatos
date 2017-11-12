@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,7 +68,11 @@ public class PurchaseOrder extends HttpServlet {
                     Factura fac = new Factura(request.getParameter("des"),date,(double)total,(double)total*0.16,Integer.parseInt(cli.getIdClient()),request.getParameter("modoPago"));
                     GestionFactura gesFac = new GestionFactura();
                 try {
-                    gesFac.MadeBill(fac);
+                        try {
+                            gesFac.MadeBill(fac);
+                        } catch (ParseException ex) {
+                            Logger.getLogger(PurchaseOrder.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     for (Producto xxx : productsShop) {
                         gesFac.MadeProducts(xxx);
                     }

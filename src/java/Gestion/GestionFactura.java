@@ -50,10 +50,12 @@ public class GestionFactura {
     public void MadeProducts(Producto pro) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
     {
             Connection conn = connMySQL.setConeccion();                           
-            ps = conn.prepareStatement("insert into factura_producto(id_factura,id_producto,cantidad,subtotal) values ((select max(id_factura)from factura),?,?,?);");		
+            ps = conn.prepareStatement("insert into factura_producto(id_factura,id_producto,cantidad,subtotal) values ((select max(id_factura)from factura),?,?,?);"
+                    + "update producto set Cantidad = Cantidad - 1  where id_producto = ?;");		
             ps.setInt(1, pro.getIdProducto());
             ps.setInt(2,1);
             ps.setDouble(3, pro.getPrice());
+            ps.setInt(4, pro.getIdProducto());
             ps.execute();
             conn.close();
     }
