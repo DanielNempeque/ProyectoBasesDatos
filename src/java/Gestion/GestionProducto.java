@@ -33,17 +33,17 @@ public class GestionProducto {
             String[] columns = {"ID","Nombre","Imagen","Cantidad","Precio"};
             mo.setColumnIdentifiers(columns);
             Object[] fila = new Object[5];
-            ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto order by id_producto desc");		
+            ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto;");		
 		rs = ps.executeQuery();
 		while (rs.next()) {
 			fila[0] = rs.getInt(1);
                         fila[1] = rs.getString(2);
-                        fila[2] = rs.getString(3);
+                        fila[2] = rs.getString(3);                        
                         fila[3] = rs.getInt(4);
                         fila[4] = rs.getInt(5);
                         mo.addRow(fila);
                 }
-                conn.close();
+            conn.close();
             return mo;
     }
     public DefaultTableModel getProductsName(String name) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException

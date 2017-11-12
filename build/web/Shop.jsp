@@ -315,7 +315,7 @@ $(document).ready(function(){
                             <h4><%=moP.getValueAt(x, 0) + " " + moP.getValueAt(x, 1)%></h4>
                             <img class="center-block" src="<%=moP.getValueAt(x, 2)%>" width="50%" height="150px">
                             <div class="info">
-                                <h5>Cantidad <%=moP.getValueAt(0, 3)%></h5>
+                                <h5>Cantidad <%=moP.getValueAt(x, 3)%></h5>
                                 <h5>$ <%=moP.getValueAt(x, 4)%></h5>
                                 <br>
                                 <h5><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h5>
