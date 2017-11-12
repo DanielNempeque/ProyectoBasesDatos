@@ -64,5 +64,41 @@ public class GestionMascota extends Controller.ConnectionDB {
        }
        return null;
    }
+   public int CuentaMascotas(String idEstado){
+       super.makeConnection();
+       PreparedStatement pst = null;
+       ResultSet rs = null;
+       int cantidad =0;
+       try {
+           String Query = "Select Count(id_estado) from animal where id_estado = ?";   
+           pst = getConnection().prepareStatement(Query);
+           pst.setInt(1, Integer.parseInt(idEstado));
+           rs = pst.executeQuery();
+           while(rs.next()){
+               cantidad = rs.getInt(1);
+           }
+           return cantidad;
+           
+           
+       } catch (Exception e) {
+           System.err.println("ERROR: " + e);
+       }finally{
+           try {
+               if(getConnection() != null){
+               getConnection().close();
+                }
+                if(pst != null){
+                    pst.close();
+                }
+                if(rs != null){
+                    pst.close();
+                }
+           } catch (Exception e) {
+               System.err.println("ERROR: " + e);
+           }
+       }
+       return 0;
+   }
+           
    
 }
