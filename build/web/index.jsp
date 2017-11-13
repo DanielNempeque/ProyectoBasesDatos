@@ -26,6 +26,7 @@
 
             window.onload = function () {
                 var chart = new CanvasJS.Chart("chartContainer", {
+                    theme: "theme2",
                     title: {
                         text: "Estado Animales sin hogar"
                     },
@@ -286,6 +287,22 @@
             </div>
 
         </form>
+        
+        <footer class="container-fluid text-center" id="footer">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Universidad de La Sabana</h3>
+				<h4>Fundamentos de bases de datos</h4>
+				<h5>vision otri</h5>				
+			</div>
+			<div class="col-sm-6">
+				<h4>Powered by</h4>
+                                <p>Stiven Lopez - Gabriela Lozano - Daniel Nempeque</p>
+                                <p>Juliana Perez - Laura Rodriguez - Santiago Tejada</p>
+			</div>
+		</div>
+	</footer>
+
 
     </body>
 </html>

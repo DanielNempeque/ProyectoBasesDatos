@@ -40,7 +40,6 @@ public class CreateEnfermedad extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            
             GestionEnfermedad enf = new GestionEnfermedad();
             String NombreTipo = request.getParameter("TipoEnfermedad");
 
@@ -48,28 +47,68 @@ public class CreateEnfermedad extends HttpServlet {
 
             String Nombre = request.getParameter("NombreEnf");
             String Descripcion = request.getParameter("Desc");
-
-            Enfermedad enfermedad = new Enfermedad(idTipoEnf, Nombre, Descripcion);
-            enf.createEnfermedad(enfermedad);
-
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>\n"
-                    + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
-                    + "        <title>PET ME</title>\n"
-                    + "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n"
-                    + "      	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n"
-                    + "      	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n"
-                    + "      	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n" 
-                    + "        <script type=\"text/javascript\" src=\"js/modal.js\"></script>\n"
-                    + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_navbar.css\">\n"
-                    + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_style.css\">\n"
-                    + "    </head>");
-            out.println("<body>");
-            out.println("<h1 class='text-center'>Se Agrego Correctamente</h1><br>");
-            out.println("<div class='container'style='margin: 5%'><button  type='button' class='btn btn-primary btn-lg btn-block' id='myLogin' onClick=\"window.location.href='Enfermedad.jsp'\">Volver</button></div>");   
-            out.println("</body>");
-            out.println("</html>");
+            if (Nombre != null && Nombre != "") {
+                if (Descripcion != null && Descripcion != "") {
+                    Enfermedad enfermedad = new Enfermedad(idTipoEnf, Nombre, Descripcion);
+                    enf.createEnfermedad(enfermedad);
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>\n"
+                            + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                            + "        <title>PET ME</title>\n"
+                            + "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n"
+                            + "      	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n"
+                            + "      	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n"
+                            + "      	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n"
+                            + "        <script type=\"text/javascript\" src=\"js/modal.js\"></script>\n"
+                            + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_navbar.css\">\n"
+                            + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_style.css\">\n"
+                            + "    </head>");
+                    out.println("<body>");
+                    out.println("<h1 class='text-center'>Se creo la enfermedad correctamente</h1><br>");
+                    out.println("<div class='container'style='margin: 5%'><button  type='button' class='btn btn-primary btn-lg btn-block' id='myLogin' onClick=\"window.location.href='Enfermedad.jsp'\">Volver</button></div>");
+                    out.println("</body>");
+                    out.println("</html>");
+                } else {
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>\n"
+                            + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                            + "        <title>PET ME</title>\n"
+                            + "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n"
+                            + "      	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n"
+                            + "      	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n"
+                            + "      	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n"
+                            + "        <script type=\"text/javascript\" src=\"js/modal.js\"></script>\n"
+                            + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_navbar.css\">\n"
+                            + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_style.css\">\n"
+                            + "    </head>");
+                    out.println("<body>");
+                    out.println("<h1 class='text-center'>No se lleno el campo Descripcion</h1><br>");
+                    out.println("<div class='container'style='margin: 5%'><button  type='button' class='btn btn-primary btn-lg btn-block' id='myLogin' onClick=\"window.location.href='Enfermedad.jsp'\">Volver</button></div>");
+                    out.println("</body>");
+                    out.println("</html>");
+                }
+            } else {
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>\n"
+                        + "        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+                        + "        <title>PET ME</title>\n"
+                        + "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n"
+                        + "      	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n"
+                        + "      	<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n"
+                        + "      	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n"
+                        + "        <script type=\"text/javascript\" src=\"js/modal.js\"></script>\n"
+                        + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_navbar.css\">\n"
+                        + "        <link rel=\"stylesheet\" type=\"text/css\" href=\"css/_style.css\">\n"
+                        + "    </head>");
+                out.println("<body>");
+                out.println("<h1 class='text-center'>No se lleno el campo Nombre</h1><br>");
+                out.println("<div class='container'style='margin: 5%'><button  type='button' class='btn btn-primary btn-lg btn-block' id='myLogin' onClick=\"window.location.href='Enfermedad.jsp'\">Volver</button></div>");
+                out.println("</body>");
+                out.println("</html>");
+            }
 
         }
     }

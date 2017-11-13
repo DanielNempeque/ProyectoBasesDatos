@@ -3,22 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/ConnectionDB.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/LoginAuth.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/js/modal.js</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/Login.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/Formularios.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/AdminScreen.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/Shop.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/Doctor.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/ConsultProductName.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Model/Mascota.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionCliente.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionMascota.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/Profile.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/Register.java</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/web/index.jsp</file>
-            <file>file:/C:/Users/juliana/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/LogOut.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/Consulta.jsp</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionMascota.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>
