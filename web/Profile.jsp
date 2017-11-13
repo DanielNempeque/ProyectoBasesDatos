@@ -4,6 +4,10 @@
     Author     : Daniel Nempeque
 --%>
 
+<%@page import="Model.Consulta"%>
+<%@page import="Model.Consulta"%>
+<%@page import="Gestion.GestionConsulta"%>
+<%@page import="Gestion.GestionConsulta"%>
 <%@page import="Model.Mascota"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Gestion.GestionMascota"%>
@@ -89,25 +93,25 @@
             <div class="row content" style="padding: 1%">
                 <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
                     <form>
-                    <select class="form-control" name="NombreMascota">
-                        
-                        <%                            
-                            GestionMascota gestMas = new GestionMascota();
-                            ArrayList<Mascota> mas = new ArrayList<Mascota>(gestMas.getMascotaidCliente(us.getIdCliente()));
-                            for (Mascota mascotas : mas) {
-                                out.println("<option>" + mascotas.getNombre() + "</option>");
-                            }
-                            String NombreCombo = request.getParameter("NombreMascota");
-                        %>                     
+                        <select class="form-control" name="NombreMascota">
 
-                    </select>
-                   
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">Buscar</button>
-                    <div class="img-responsive" style="margin: 4%">
-                        <img src="img/foto.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
-                    </div>
-                     </form>
+                            <%                            GestionMascota gestMas = new GestionMascota();
+                                ArrayList<Mascota> mas = new ArrayList<Mascota>(gestMas.getMascotaidCliente(us.getIdCliente()));
+                                out.println("<option>" + "Seleccione su mascota" + "</option>");
+                                for (Mascota mascotas : mas) {
+                                    out.println("<option>" + mascotas.getNombre() + "</option>");
+                                }
+                                String NombreCombo = request.getParameter("NombreMascota");
+                            %>                     
+
+                        </select>
+
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Buscar</button>
+                        <div class="img-responsive" style="margin: 4%">
+                            <img src="img/foto.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
+                        </div>
+                    </form>
 
                 </div>
                 <br>
@@ -126,10 +130,8 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="well">
-                                <h4>Fecha de nacimiento</h4>
-                                <%                       
-                                    
-                                    for (Mascota mascotas : mas) {
+                                <h4>Edad</h4>
+                                <%                                    for (Mascota mascotas : mas) {
                                         if (mascotas.getNombre().equals(NombreCombo)) {
                                             out.println("<p>" + mascotas.getFechaNacimiento() + "</p>");
                                         }
@@ -142,21 +144,48 @@
                         <div class="col-sm-4">
                             <div class="well">
                                 <h4>Estado</h4>
-                                <p>No aplica</p> 
+                                <%                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            out.println("<p>" + mascotas.getDescripcion() + "</p>");
+                                        }
+                                    }
+
+
+                                %>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Consultas</h4>
-                                <p>000/00/00</p> 
-                            </div>
+                                <div class="col-sm-4">
+                                    <div class="well">
+                                        <form> 
+                                            <h4>Consultas</h4>
+                                            <select class="form-control" name="Consulta">
+
+                                                <%      GestionConsulta gestCon = new GestionConsulta();
+                                                    ArrayList<Consulta> con = new ArrayList<Consulta>(gestCon.GetConsultaIdCliente(us.getIdCliente()));
+                                                    out.println("<option>" + "Seleccione la fecha de la consulta" + "</option>");
+                                                    for (Consulta consulta : con) {
+                                                        out.println("<option>" + consulta.getFecha()+ "</option>");
+                                                    }
+                                                    String NombreConsulta = request.getParameter("Consulta");
+                                                %>                     
+
+                                            </select>                              
+
+                                    </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row">  
                         <div class="col-sm-4">
                             <div class="well">
                                 <h4>Especie</h4>
-                                <p>No aplica</p>
+                                <%                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            out.println("<p>" + mascotas.getNombreEstado() + "</p>");
+                                        }
+                                    }
+
+
+                                %>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -168,7 +197,14 @@
                         <div class="col-sm-4">
                             <div class="well">
                                 <h4>Peso</h4> 
-                                <p>No aplica</p> 
+                                <p> <%                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            out.println("<p>" + mascotas.getPeso() + "</p>");
+                                        }
+                                    }
+
+
+                                    %></p> 
                             </div>
                         </div>
                     </div>
@@ -176,7 +212,18 @@
                         <div class="col-sm-8">
                             <div class="well">
                                 <h4>Veterinario</h4>
-                                <p>No aplica</p> 
+                                <p><%      /*                              GestionConsulta gestCons = new GestionConsulta();
+                                    ArrayList<Consulta> cons = new ArrayList<Consulta>(gestCons.GetConsultaIdCliente(us.getIdCliente()));
+                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            for (Consulta consulta : cons) {
+                                                if(consulta.getId_Animal() == mascotas.getId_Animal()){
+                                                     out.println("<p>" + consulta.getNombreVet() + "</p>");
+                                                } 
+                                            }
+                                        }
+                                    }*/
+                                    %></p> 
                             </div>
                         </div>
                         <div class="col-sm-4">

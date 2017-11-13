@@ -11,11 +11,42 @@ package Model;
  */
 public class Consulta {
    private int id_Consulta, id_Veterinario,id_Animal;
-   private String Fecha,Hora,NombreEnfermedad,DescripcionCon;
+   private String Fecha,Hora,NombreEnfermedad,DescripcionCon, NombreVet;
    
     @Override
     public String toString() {
         return "Consulta{" + "id_Consulta=" + id_Consulta + ", id_Veterinario=" + id_Veterinario + ", id_Animal=" + id_Animal + ", Fecha=" + Fecha + ", Hora=" + Hora + '}';
+    }
+
+    public Consulta(String Fecha, String NombreEnfermedad, String DescripcionCon, String NombreVet) {
+        this.Fecha = Fecha;
+        this.NombreEnfermedad = NombreEnfermedad;
+        this.DescripcionCon = DescripcionCon;
+        this.NombreVet = NombreVet;
+    }
+
+    public void setNombreEnfermedad(String NombreEnfermedad) {
+        this.NombreEnfermedad = NombreEnfermedad;
+    }
+
+    public void setDescripcionCon(String DescripcionCon) {
+        this.DescripcionCon = DescripcionCon;
+    }
+
+    public void setNombreVet(String NombreVet) {
+        this.NombreVet = NombreVet;
+    }
+
+    public String getNombreEnfermedad() {
+        return NombreEnfermedad;
+    }
+
+    public String getDescripcionCon() {
+        return DescripcionCon;
+    }
+
+    public String getNombreVet() {
+        return NombreVet;
     }
 
     public Consulta(int id_Consulta, int id_Veterinario, int id_Animal, String Fecha, String Hora) {

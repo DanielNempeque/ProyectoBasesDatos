@@ -22,6 +22,22 @@ public class Mascota {
         this.Peso= Peso;
     }
 
+    public void setNombreEstado(String NombreEstado) {
+        this.NombreEstado = NombreEstado;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    public String getNombreEstado() {
+        return NombreEstado;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
     public Mascota(String Nombre, String FechaNacimiento, String Peso, String NombreEstado, String Descripcion) {
         this.Nombre = Nombre;
         this.FechaNacimiento = FechaNacimiento;
