@@ -111,16 +111,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="datepicker">Fecha</label>
-                                    <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-                                        <input class="form-control" type="text" readonly />
+                                    <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
+                                        <input name="date" class="form-control" type="text" readonly />
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
 
                                 </div>
-                                <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <textarea class="form-control" rows="4" id="descripcion" name="Desc" placeholder="Descripcion"></textarea>
-                                </div>
+                                
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action = 'CreateConsulta'">Crear</button>
 
                             </form>

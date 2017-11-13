@@ -25,6 +25,13 @@ public class Consulta {
         this.NombreVet = NombreVet;
     }
 
+    public Consulta(int id_Veterinario, int id_Animal, String Fecha) {
+        this.id_Veterinario = id_Veterinario;
+        this.id_Animal = id_Animal;
+        this.Fecha = Fecha;
+    }
+    
+    
     public void setNombreEnfermedad(String NombreEnfermedad) {
         this.NombreEnfermedad = NombreEnfermedad;
     }

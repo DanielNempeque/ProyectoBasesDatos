@@ -181,7 +181,8 @@ public class GestionMascota extends Controller.ConnectionDB {
                 System.err.println("ERROR: " + e);
             }
 
-            return 0;
+            
         }
+        return 0;
     }
 }
