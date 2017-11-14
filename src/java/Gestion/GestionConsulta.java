@@ -8,6 +8,7 @@ package Gestion;
 import Model.Consulta;
 import Model.Enfermedad;
 import Model.TipoEnfermedad;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -62,5 +63,34 @@ public class GestionConsulta extends Controller.ConnectionDB {
         }
         return null;
     }
-    
+    public void CreateConsulta(Consulta consulta){
+        super.makeConnection();
+        PreparedStatement pst = null;
+        int rs = 0;
+        Date date = Date.valueOf(consulta.getFecha());
+        System.out.println(consulta.getId_Veterinario());
+        try {
+            String Query = "Insert into Consulta(Fecha, Hora, id_veterinario, id_animal) values (?, NOW(),?,?)";
+            pst = getConnection().prepareStatement(Query);
+            pst.setDate(1, date);
+            pst.setInt(2, consulta.getId_Veterinario());
+            pst.setInt(3, consulta.getId_Animal());
+            rs = pst.executeUpdate();
+                        
+        } catch (Exception e) {
+            System.err.println("ERROR: " + e +"Es aqui");
+        }finally{
+            try {
+                if(getConnection() != null){
+                    getConnection().close();
+                }
+                if(pst != null){
+                    pst.close();
+                }
+                
+            } catch (Exception e) {
+                System.err.println("ERROR: " + e);
+            }
+        }
+    }
 }

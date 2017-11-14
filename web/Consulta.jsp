@@ -21,13 +21,20 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
         <script type="text/javascript" src="js/modal.js"></script>
+        <script type="text/javascript" src="js/datepicker.js"></script>
         <link rel="stylesheet" type="text/css" href="css/_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/_style.css">
-        <% 
+        <link rel="stylesheet" type="text/css" href="css/_date.css">
+        <%
             String documento = request.getParameter("docPersona");
         %>
-        
+
     </head>
     <body>
         <nav class="navbar navbar-inverse" style="height: 10%">
@@ -78,14 +85,13 @@
                                             <input type="text" class="form-control" id="idPersona" name="docPersona" placeholder="Doc Identidad">
                                         </div>						
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Buscar Mascotas</button>
+                                            <button type="submit" class="btn btn-primary" onclick="this.form.action = ''">Buscar Mascotas</button>
                                         </div>
                                     </div>
                                     <br>
                                     <div class="form-group">
-                                        <select class="form-control">
+                                        <select class="form-control" name="nombreAnimal">
                                             <%
-                                                
                                                 if (documento != "" && documento != null) {
                                                     GestionMascota gest = new GestionMascota();
                                                     ArrayList<Mascota> mascotas = new ArrayList(gest.getMascotaDocCliente(documento));
@@ -93,7 +99,7 @@
                                                         out.println("<option>" + mas.getNombre() + "</option>");
                                                     }
                                                 }
-                                                
+
                                             %>
                                         </select>
                                     </div>
@@ -104,15 +110,15 @@
                                     <input type="text" class="form-control" id="idVet" name="docVeterinario" placeholder="Doc Veterninario">
                                 </div>
                                 <div class="form-group">
-                                    <label for="datetime">Fecha</label>
-                                    <input type='text' class="form-control" id='datetime'>
+                                    <label for="datepicker">Fecha</label>
+                                    <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
+                                        <input name="date" class="form-control" type="text" readonly />
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
 
                                 </div>
-                                <div class="form-group">
-                                    <label for="descripcion">Descripcion</label>
-                                    <textarea class="form-control" rows="4" id="descripcion" name="Desc" placeholder="Descripcion"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Crear</button>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action = 'CreateConsulta'">Crear</button>
 
                             </form>
                         </div>
@@ -149,7 +155,7 @@
                     </div>
                 </div> 
             </div>
-            
+
 
     </body>
 </html>
