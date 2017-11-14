@@ -154,161 +154,237 @@
                                 %>
                             </div>
                         </div>
-                                <div class="col-sm-4">
-                                    <div class="well">
-                                        <form> 
-                                            <h4>Consultas</h4>
-                                            <select class="form-control" name="Consulta">
+                        <!-- <div class="col-sm-4">
+                             <div class="well">
+                                <form> 
+                                    <h4>Consultas</h4>
+                                    <select class="form-control" name="Consulta"> -->
 
-                                                <%      GestionConsulta gestCon = new GestionConsulta();
-                                                    ArrayList<Consulta> con = new ArrayList<Consulta>(gestCon.GetConsultaIdCliente(us.getIdCliente()));
-                                                    out.println("<option>" + "Seleccione la fecha de la consulta" + "</option>");
-                                                    for (Consulta consulta : con) {
-                                                        out.println("<option>" + consulta.getFecha()+ "</option>");
-                                                    }
-                                                    String NombreConsulta = request.getParameter("Consulta");
-                                                %>                     
+                        <%     /* GestionConsulta gestCon = new GestionConsulta();
+                            ArrayList<Consulta> con = new ArrayList<Consulta>(gestCon.GetConsultaIdCliente(us.getIdCliente()));
+                            out.println("<option>" + "Seleccione la fecha de la consulta" + "</option>");
+                            for (Consulta consulta : con) {
+                                out.println("<option>" + consulta.getFecha() + "</option>");
+                                out.println("<option>" + consulta.getNombreVet()+ "</option>");
+                                out.println("<option>" + consulta.getDescripcionCon()+ "</option>");
+                            }
+                            String NombreConsulta = request.getParameter("Consulta");*/
+                        %>                     
 
-                                            </select>                              
+                        <!--  </select>  
+                          <br>
+                          <button type="submit" class="btn btn-primary btn-block btn-lg">Buscar</button>
 
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="row">  
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Especie</h4>
-                                <%                                    for (Mascota mascotas : mas) {
-                                        if (mascotas.getNombre().equals(NombreCombo)) {
-                                            out.println("<p>" + mascotas.getNombreEstado() + "</p>");
-                                        }
-                                    }
-
-
-                                %>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Enfermedades</h4> 
-                                <p>No aplica</p> 
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Peso</h4> 
-                                <p> <%                                    for (Mascota mascotas : mas) {
-                                        if (mascotas.getNombre().equals(NombreCombo)) {
-                                            out.println("<p>" + mascotas.getPeso() + "</p>");
-                                        }
-                                    }
-
-
-                                    %></p> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="well">
-                                <h4>Veterinario</h4>
-                                <p><%      /*                              GestionConsulta gestCons = new GestionConsulta();
-                                    ArrayList<Consulta> cons = new ArrayList<Consulta>(gestCons.GetConsultaIdCliente(us.getIdCliente()));
-                                    for (Mascota mascotas : mas) {
-                                        if (mascotas.getNombre().equals(NombreCombo)) {
-                                            for (Consulta consulta : cons) {
-                                                if(consulta.getId_Animal() == mascotas.getId_Animal()){
-                                                     out.println("<p>" + consulta.getNombreVet() + "</p>");
-                                                } 
+                  </div>
+              </div>
+          </div>-->
+                        <div class="row">  
+                            <div class="col-sm-4">
+                                <div class="well">
+                                    <h4>Especie</h4>
+                                    <%                                    for (Mascota mascotas : mas) {
+                                            if (mascotas.getNombre().equals(NombreCombo)) {
+                                                out.println("<p>" + mascotas.getNombreEstado() + "</p>");
                                             }
                                         }
-                                    }*/
-                                    %></p> 
+
+
+                                    %>
+                                </div>
                             </div>
+                            <!-- <div class="col-sm-4">
+                                 <div class="well">
+                                     <h4>Enfermedades</h4> 
+                                     <p>No aplica</p> 
+                                 </div>
+                             </div>-->
+                            
+                                <div class="col-sm-4">
+                                    <div class="well">
+                                        <h4>Peso</h4> 
+                                        <%                                    for (Mascota mascotas : mas) {
+                                                if (mascotas.getNombre().equals(NombreCombo)) {
+                                                    out.println("<p>" + mascotas.getPeso() + "</p>");
+                                                }
+                                            }
+
+
+                                        %>
+                                    </div>
+                                </div>
+                            
                         </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Observaciones</h4> 
-                                <p>No aplica</p>
-                            </div>
+
+                        <div class="container">
+                            <h2>Consultas</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Veterinario</th>
+                                        <th>Enfermedad</th>
+                                        <th>Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Default</td>
+                                        <td>Defaultson</td>
+                                        <td>def@somemail.com</td>
+                                        <td>sin descripcion</td>
+                                    </tr>      
+                                    <tr class="success">
+                                        <td>Success</td>
+                                        <td>Doe</td>
+                                        <td>john@example.com</td>
+                                        <td>sin descripcion</td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>Danger</td>
+                                        <td>Moe</td>
+                                        <td>mary@example.com</td>
+                                        <td>sin descripcion</td>
+
+                                    </tr>
+                                    <tr class="info">
+                                        <td>Info</td>
+                                        <td>Dooley</td>
+                                        <td>july@example.com</td>
+                                        <td>sin descripcion</td>
+                                    </tr>
+                                    <tr class="warning">
+                                        <td>Warning</td>
+                                        <td>Refs</td>
+                                        <td>bo@example.com</td>
+                                        <td>sin descripcion</td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>Active</td>
+                                        <td>Activeson</td>
+                                        <td>act@example.com</td>
+                                        <td>sin descripcion</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
+
+
+
+                        <!--<div class="row">
+                            <div class="col-sm-8">
+                                <div class="well">
+                                    <h4>Veterinario</h4>
+                                    <p><%                                    /*for (Mascota mascota : mas) {
+                                            if (mascota.getNombre().equals(NombreCombo)){
+                                        for (Consulta consulta : con) {
+                                            if (consulta.getFecha().equals(NombreConsulta)) {
+                                                out.println("<p>" + consulta.getNombreVet() + "</p>");
+                                            
+                    }
+
+                }
+            }
+        }*/
+
+ /*                              GestionConsulta gestCons = new GestionConsulta();
+                                        ArrayList<Consulta> cons = new ArrayList<Consulta>(gestCons.GetConsultaIdCliente(us.getIdCliente()));
+                                        for (Mascota mascotas : mas) {
+                                            if (mascotas.getNombre().equals(NombreCombo)) {
+                                                for (Consulta consulta : cons) {
+                                                    if(consulta.getId_Animal() == mascotas.getId_Animal()){
+                                                         out.println("<p>" + consulta.getNombreVet() + "</p>");
+                                                    } 
+                                                }
+                                            }
+                                        }*/
+                        %></p> 
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="well">
+                    <h4>Observaciones</h4> 
+                    <p>No aplica</p>
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid">
-            <div class="row content" style="padding: 1%">
-                <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
-                    <h2 class="text-center">Putis</h2>
-                    <img src="img/putis.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
-                </div>
-                <br>
-
-                <div class="col-sm-7">
-                    <div class="well">
-                        <h4>Propietario: Eduard Camilo Rincón</h4>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Fecha de nacimiento</h4>
-                                <p>2016/03/14</p> 
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Estado</h4>
-                                <p>No aplica</p> 
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Consultas</h4>
-                                <p>2016/05/20</p> 
-                                <p>2016/07/19</p> 
-                                <p>2017/04/27</p> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Especie</h4>
-                                <p>Hámster enano de Roborovski</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Enfermedades</h4> 
-                                <p>Rinitis</p> 
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Peso</h4> 
-                                <p>250 g</p> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="well">
-                                <h4>Veterinario: Pablito Pérez García</h4> 
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well">
-                                <h4>Observaciones</h4> 
-                                <p>No aplica</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </
-        </div>
-
-    </body>
-</html>
+    </div>
+</div>
+</div>-->
+                        <!--       <br>
+                               <br>
+                               <br>
+                               <div class="container-fluid">
+                                   <div class="row content" style="padding: 1%">
+                                       <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
+                                           <h2 class="text-center">Putis</h2>
+                                           <img src="img/putis.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
+                                       </div>
+                                       <br>
+       
+                                       <div class="col-sm-7">
+                                           <div class="well">
+                                               <h4>Propietario: Eduard Camilo Rincón</h4>
+       
+                                           </div>
+                                           <div class="row">
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Fecha de nacimiento</h4>
+                                                       <p>2016/03/14</p> 
+                                                   </div>
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Estado</h4>
+                                                       <p>No aplica</p> 
+                                                   </div>
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Consultas</h4>
+                                                       <p>2016/05/20</p> 
+                                                       <p>2016/07/19</p> 
+                                                       <p>2017/04/27</p> 
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Especie</h4>
+                                                       <p>Hámster enano de Roborovski</p>
+                                                   </div>
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Enfermedades</h4> 
+                                                       <p>Rinitis</p> 
+                                                   </div>
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Peso</h4> 
+                                                       <p>250 g</p> 
+                                                   </div>
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                               <div class="col-sm-8">
+                                                   <div class="well">
+                                                       <h4>Veterinario: Pablito Pérez García</h4> 
+                                                   </div>
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <div class="well">
+                                                       <h4>Observaciones</h4> 
+                                                       <p>No aplica</p>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   </
+                               </div>
+                        -->
+                        </body>
+                        </html>
