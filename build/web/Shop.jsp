@@ -3,10 +3,9 @@
     Created on : 14/10/2017, 06:55:44 PM
     Author     : Daniel Nempeque
 --%>
-
-
 <%@page import="Gestion.GestionModoPago"%>
 <%@page import="Model.Usuario"%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.Producto"%>
 <%@page import="Gestion.GestionProducto"%>
@@ -350,63 +349,5 @@ $(document).ready(function(){
                             }
                         %>  
                     </form>
-=======
-
-                </div>
-            </div>
-        </div>
-        <form action="AProducto" method="post">
-        <%            
-            if(request.getAttribute("products")==null)
-            {
-            GestionProducto gesP = new GestionProducto();
-            DefaultTableModel moP;            
-            moP = gesP.getAllProducts();
-            for(int x=0;x<moP.getRowCount();x++)
-            {
-            %>
-            <div class="col-sm-4">                 
-                <h4><%=moP.getValueAt(x,0)+" "+moP.getValueAt(x,1)%></h4>
-                <img class="center-block" src="<%=moP.getValueAt(x,2)%>" width="50%" height="150px">
-              <div class="info">
-                  <h5>Cantidad <%=moP.getValueAt(0,3)%></h5>
-                  <h5>$ <%=moP.getValueAt(x, 4)%></h5>
-                <br>
-                <h5><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h5>
-                <h5><i class="fa fa-truck" aria-hidden="true"></i> Envios a todo el pais</h5>
-                <br>                
-                <button type="submit" class="btn btn-success btn-block" name="producto" value="<%=moP.getValueAt(x,0)%>">Comprar</button>
-              </div>
-            </div>  
-        <%
-            }
-}
-else
-{
-    ArrayList<Producto> products = (ArrayList<Producto>)request.getAttribute("products");
-for(Producto xxx:products)            
-            {                            
-    %>
-    <div class="col-sm-4">                 
-                <h4> <%=xxx.getIdProducto()+" "+xxx.getName()%> </h4>
-                <img class="center-block" src="<%=xxx.getImagen()%>" width="50%" height="150px">
-              <div class="info">
-                  <h5>Cantidad <%=xxx.getQuantity()%></h5>
-                  <h5>$ <%=xxx.getPrice()%></h5>
-                <br>
-                <h5><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h5>
-                <h5><i class="fa fa-truck" aria-hidden="true"></i> Envios a todo el pais</h5>
-                <br>
-                <button type="submit" class="btn btn-success btn-block" name="producto" value="<%=xxx.getIdProducto()%>">Comprar</button>
-              </div>
-            </div>  
-    <%
-}
-}
-            %>  
-            </form>
-    </div>
-
-
 </body>
 </html>
