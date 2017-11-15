@@ -10,20 +10,18 @@ import Model.Producto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author JORDAN
  */
-public class ConsultProductType extends HttpServlet {
+public class UpdateProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,48 +34,23 @@ public class ConsultProductType extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-               
-
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.print(request.getParameter("tipo"));        
-
-        GestionProducto ges = new GestionProducto();        
-        DefaultTableModel mo = null;
+        GestionProducto ges = new GestionProducto();
+        Producto pro = new Producto(Integer.parseInt(request.getParameter("tipo")),request.getParameter("nombre"),request.getParameter("imagen"),Integer.parseInt(request.getParameter("cantidad")),Integer.parseInt(request.getParameter("precio")),Integer.parseInt(request.getParameter("id")));
         try {
-            mo = ges.getProductsType(Integer.parseInt(request.getParameter("tipo")));
+            ges.UpdateProduct(pro);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateProduct.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateProduct.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateProduct.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(ConsultProductType.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateProduct.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ArrayList<Producto> products = new ArrayList<>();
-        Producto p;
-        for(int x=0;x<mo.getRowCount();x++)
-        {
-            p = new Producto((int)mo.getValueAt(x, 0),(String)mo.getValueAt(x, 1),(String)mo.getValueAt(x, 2),
-            (int)mo.getValueAt(x, 3),(int)mo.getValueAt(x, 4));            
-            products.add(p);
-
-        }                      
-
-        }              
-        ArrayList<Producto> productsShop = null;       
-        if(request.getSession().getAttribute("productsShop")==null)
-        {
-            productsShop = new ArrayList<>();
-        }
-        else
-        {
-            productsShop = (ArrayList<Producto>) request.getSession().getAttribute("productsShop");
-        }        
-        request.getSession().setAttribute("productsShop", productsShop);
-        request.setAttribute("productsShop", productsShop);
-
+        request.setAttribute("mes","1");
+        request.setAttribute("mes1","Actualizado exitosamente");
+        request.getRequestDispatcher("Productos.jsp").forward(request, response); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

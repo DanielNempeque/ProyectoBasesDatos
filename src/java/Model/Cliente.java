@@ -32,6 +32,12 @@ public class Cliente {
         this.vetName = vetName;
         this.idLogin = idLogin;
     }
+    public Cliente(String Name, String Mail, String Document, String idClient) {
+        this.Name = Name;
+        this.Mail = Mail;        
+        this.Document = Document;        
+        this.idClient = idClient;        
+    }
 
     public Cliente(String Name, String Phone, String Document, String BirthDate, String Gender) {
         this.Name = Name;
