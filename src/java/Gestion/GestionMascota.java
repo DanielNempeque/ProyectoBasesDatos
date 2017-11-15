@@ -185,4 +185,43 @@ public class GestionMascota extends Controller.ConnectionDB {
         }
         return 0;
     }
+    public float[] CuentaMascotaEstado() {
+        super.makeConnection();
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        int cont = 0;
+        float[] cantidad = new float[2];
+        try {
+            String Query = "SELECT E.Nombre, ROUND(AVG(TIMESTAMPDIFF(YEAR,A.Fecha_Nacimiento,NOW())),1) PromedioEdad\n" +
+                            "from Estado E\n" +
+                            "inner join Animal A ON A.id_estado= E.id_estado\n" +
+                            "group by E.Nombre";
+            pst = getConnection().prepareStatement(Query);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                cantidad[cont] = rs.getFloat(2);
+                cont++;
+            }
+            return cantidad;
+
+        } catch (Exception e) {
+            System.err.println("ERROR: " + e);
+        } finally {
+            try {
+                if (getConnection() != null) {
+                    getConnection().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    pst.close();
+                }
+            } catch (Exception e) {
+                System.err.println("ERROR: " + e);
+            }
+        }
+        return null;
+    }
+    
 }
