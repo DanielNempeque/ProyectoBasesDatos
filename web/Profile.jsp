@@ -178,44 +178,45 @@
                   </div>
               </div>
           </div>-->
-                        <div class="row">  
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <h4>Especie</h4>
-                                    <%                                    for (Mascota mascotas : mas) {
-                                            if (mascotas.getNombre().equals(NombreCombo)) {
-                                                out.println("<p>" + mascotas.getNombreEstado() + "</p>");
-                                            }
+
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <h4>Especie</h4>
+                                <%                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            out.println("<p>" + mascotas.getNombreEstado() + "</p>");
                                         }
+                                    }
 
 
-                                    %>
-                                </div>
+                                %>
                             </div>
-                            <!-- <div class="col-sm-4">
-                                 <div class="well">
-                                     <h4>Enfermedades</h4> 
-                                     <p>No aplica</p> 
-                                 </div>
-                             </div>-->
-                            
-                                <div class="col-sm-4">
-                                    <div class="well">
-                                        <h4>Peso</h4> 
-                                        <%                                    for (Mascota mascotas : mas) {
-                                                if (mascotas.getNombre().equals(NombreCombo)) {
-                                                    out.println("<p>" + mascotas.getPeso() + "</p>");
-                                                }
-                                            }
+                        </div>
+                        <!-- <div class="col-sm-4">
+                             <div class="well">
+                                 <h4>Enfermedades</h4> 
+                                 <p>No aplica</p> 
+                             </div>
+                         </div>-->
+
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <h4>Peso</h4> 
+                                <%                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            out.println("<p>" + mascotas.getPeso() + "</p>");
+                                        }
+                                    }
 
 
-                                        %>
-                                    </div>
-                                </div>
-                            
+                                %>
+                            </div>
                         </div>
 
-                        <div class="container">
+                    </div>
+
+                    <div class="container">
+                        <div class="col-sm-8">
                             <h2>Consultas</h2>
                             <table class="table">
                                 <thead>
@@ -267,124 +268,302 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
 
 
 
-                        <!--<div class="row">
-                            <div class="col-sm-8">
-                                <div class="well">
-                                    <h4>Veterinario</h4>
-                                    <p><%                                    /*for (Mascota mascota : mas) {
-                                            if (mascota.getNombre().equals(NombreCombo)){
-                                        for (Consulta consulta : con) {
-                                            if (consulta.getFecha().equals(NombreConsulta)) {
-                                                out.println("<p>" + consulta.getNombreVet() + "</p>");
+                    <!--<div class="row">
+                        <div class="col-sm-8">
+                            <div class="well">
+                                <h4>Veterinario</h4>
+                                <p><%                                    /*for (Mascota mascota : mas) {
+                                        if (mascota.getNombre().equals(NombreCombo)){
+                                    for (Consulta consulta : con) {
+                                        if (consulta.getFecha().equals(NombreConsulta)) {
+                                            out.println("<p>" + consulta.getNombreVet() + "</p>");
                                             
-                    }
-
                 }
+
             }
-        }*/
+        }
+    }*/
 
  /*                              GestionConsulta gestCons = new GestionConsulta();
-                                        ArrayList<Consulta> cons = new ArrayList<Consulta>(gestCons.GetConsultaIdCliente(us.getIdCliente()));
-                                        for (Mascota mascotas : mas) {
-                                            if (mascotas.getNombre().equals(NombreCombo)) {
-                                                for (Consulta consulta : cons) {
-                                                    if(consulta.getId_Animal() == mascotas.getId_Animal()){
-                                                         out.println("<p>" + consulta.getNombreVet() + "</p>");
-                                                    } 
-                                                }
+                                    ArrayList<Consulta> cons = new ArrayList<Consulta>(gestCons.GetConsultaIdCliente(us.getIdCliente()));
+                                    for (Mascota mascotas : mas) {
+                                        if (mascotas.getNombre().equals(NombreCombo)) {
+                                            for (Consulta consulta : cons) {
+                                                if(consulta.getId_Animal() == mascotas.getId_Animal()){
+                                                     out.println("<p>" + consulta.getNombreVet() + "</p>");
+                                                } 
                                             }
-                                        }*/
-                        %></p> 
-                </div>
+                                        }
+                                    }*/
+                    %></p> 
             </div>
-            <div class="col-sm-4">
-                <div class="well">
-                    <h4>Observaciones</h4> 
-                    <p>No aplica</p>
-                </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="well">
+                <h4>Observaciones</h4> 
+                <p>No aplica</p>
             </div>
         </div>
     </div>
 </div>
+</div>
 </div>-->
-                        <!--       <br>
-                               <br>
-                               <br>
-                               <div class="container-fluid">
-                                   <div class="row content" style="padding: 1%">
-                                       <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
-                                           <h2 class="text-center">Putis</h2>
-                                           <img src="img/putis.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
+                    <!--       <br>
+                           <br>
+                           <br>
+                           <div class="container-fluid">
+                               <div class="row content" style="padding: 1%">
+                                   <div class="col-sm-3 sidenav hidden-xs" style="margin-top: 5%; padding: 25px; background-color:#f2f2f2; ">
+                                       <h2 class="text-center">Putis</h2>
+                                       <img src="img/putis.jpg" alt="" class="img-responsive img-circle center-block" width="60%">
+                                   </div>
+                                   <br>
+   
+                                   <div class="col-sm-7">
+                                       <div class="well">
+                                           <h4>Propietario: Eduard Camilo Rincón</h4>
+   
                                        </div>
-                                       <br>
-       
-                                       <div class="col-sm-7">
-                                           <div class="well">
-                                               <h4>Propietario: Eduard Camilo Rincón</h4>
-       
-                                           </div>
-                                           <div class="row">
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Fecha de nacimiento</h4>
-                                                       <p>2016/03/14</p> 
-                                                   </div>
-                                               </div>
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Estado</h4>
-                                                       <p>No aplica</p> 
-                                                   </div>
-                                               </div>
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Consultas</h4>
-                                                       <p>2016/05/20</p> 
-                                                       <p>2016/07/19</p> 
-                                                       <p>2017/04/27</p> 
-                                                   </div>
+                                       <div class="row">
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Fecha de nacimiento</h4>
+                                                   <p>2016/03/14</p> 
                                                </div>
                                            </div>
-                                           <div class="row">
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Especie</h4>
-                                                       <p>Hámster enano de Roborovski</p>
-                                                   </div>
-                                               </div>
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Enfermedades</h4> 
-                                                       <p>Rinitis</p> 
-                                                   </div>
-                                               </div>
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Peso</h4> 
-                                                       <p>250 g</p> 
-                                                   </div>
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Estado</h4>
+                                                   <p>No aplica</p> 
                                                </div>
                                            </div>
-                                           <div class="row">
-                                               <div class="col-sm-8">
-                                                   <div class="well">
-                                                       <h4>Veterinario: Pablito Pérez García</h4> 
-                                                   </div>
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Consultas</h4>
+                                                   <p>2016/05/20</p> 
+                                                   <p>2016/07/19</p> 
+                                                   <p>2017/04/27</p> 
                                                </div>
-                                               <div class="col-sm-4">
-                                                   <div class="well">
-                                                       <h4>Observaciones</h4> 
-                                                       <p>No aplica</p>
-                                                   </div>
+                                           </div>
+                                       </div>
+                                       <div class="row">
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Especie</h4>
+                                                   <p>Hámster enano de Roborovski</p>
+                                               </div>
+                                           </div>
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Enfermedades</h4> 
+                                                   <p>Rinitis</p> 
+                                               </div>
+                                           </div>
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Peso</h4> 
+                                                   <p>250 g</p> 
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="row">
+                                           <div class="col-sm-8">
+                                               <div class="well">
+                                                   <h4>Veterinario: Pablito Pérez García</h4> 
+                                               </div>
+                                           </div>
+                                           <div class="col-sm-4">
+                                               <div class="well">
+                                                   <h4>Observaciones</h4> 
+                                                   <p>No aplica</p>
                                                </div>
                                            </div>
                                        </div>
                                    </div>
-                                   </
                                </div>
-                        -->
-                        </body>
-                        </html>
+                               </
+                           </div>
+                    -->
+
+
+
+
+
+                    <div class="container">
+                        <div class="col-sm-8" >
+                            <h1>Actualización de datos</h1>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#ingresa">Agregar Mascota</a>
+                                        </h4>
+                                    </div>
+                                    <div id="ingresa" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <form method="get" action="CreateMascota">
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label for="nomMascota">Nombre Mascota</label>
+                                                        <input type="text" class="form-control" id="NombreMasc" name="NombreMascota" placeholder="Nombre Mascota">
+                                                        <%/*
+                                               if (documento != "" && documento != null) {
+                                                   GestionMascota gest = new GestionMascota();
+                                                   ArrayList<Mascota> mascotas = new ArrayList(gest.getMascotaDocCliente(documento));
+                                                   for (Mascota mas : mascotas) {
+                                                       out.println("<option>" + mas.getNombre() + "</option>");
+                                                   }
+                                               }*/
+
+                                                        %>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="datepicker">Fecha de nacimiento</label>
+                                                    <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
+                                                        <input name="fecha" class="form-control" type="text" readonly />
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="descripcion">Estado</label>
+                                                        <select class="form-control" name="Estado">
+                                                            <%   /*                                            GestionEnfermedad enf = new GestionEnfermedad();
+                                                           ArrayList<TipoEnfermedad> tip = new ArrayList<TipoEnfermedad>(enf.GetTipoEnfermedad());
+                                                           for (TipoEnfermedad enfermedades : tip) {
+                                                               out.println("<option>" + enfermedades.getNombre() + "</option>");
+                                                           }*/
+                                                            %>
+
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="form-group">
+                                                            <label for="nomMascota">Peso</label>
+                                                            <input type="text" class="form-control" id="NombreMasc" name="peso" placeholder="Peso">
+                                                            <%/*
+                                                   if (documento != "" && documento != null) {
+                                                       GestionMascota gest = new GestionMascota();
+                                                       ArrayList<Mascota> mascotas = new ArrayList(gest.getMascotaDocCliente(documento));
+                                                       for (Mascota mas : mascotas) {
+                                                           out.println("<option>" + mas.getNombre() + "</option>");
+                                                       }
+                                                   }*/
+
+                                                            %>
+                                                        </div>
+                                                        
+                                                    <div class="form-group">
+                                                        <label for="descripcion">Especie</label>
+                                                        <select class="form-control" name="Especie">
+                                                            <%   /*                                            GestionEnfermedad enf = new GestionEnfermedad();
+                                                           ArrayList<TipoEnfermedad> tip = new ArrayList<TipoEnfermedad>(enf.GetTipoEnfermedad());
+                                                           for (TipoEnfermedad enfermedades : tip) {
+                                                               out.println("<option>" + enfermedades.getNombre() + "</option>");
+                                                           }*/
+                                                            %>
+
+                                                        </select>
+                                                    </div>
+
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Crear</button>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#Busca">Buscar Enfermedad</a>
+                                        </h4>
+                                    </div>
+                                    <div id="Busca" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <form method="get" action="">
+                                                <div class="form-inline">
+                                                    <label for="idEnf">Nombre Enfermedad</label>
+                                                    <input type="text" class="form-control" id="idEnf" name="NombreEnf" placeholder="Nombre enfermedad">
+                                                    <input name="Submit" class="btn btn-primary" type="submit" value="Buscar">
+                                                    <%/*
+                                                        String docPersona = request.getParameter("NombreEnf");
+
+                                                        Enfermedad enfer = enf.getEnfermedadNombre(docPersona);
+
+                                                        if (enfer == null) {
+                                                            out.println("<h4>NO se encontro la enfermedad</h4>");
+                                                        } else if (enfer != null) {
+                                                            out.println("<br><strong>Nombre: </strong>" + enfer.getNombre());
+                                                            out.println("<br><strong>Tipo Enfermedad: </strong>" + enfer.getNombretipoE());
+                                                            out.println("<br><strong>Descripcion: </strong>" + enfer.getDescripcion());
+                                                        }*/
+
+                                                    %>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#List">Lista Enfermedades</a>
+                                            </h4>
+                                        </div>
+                                        <div id="List" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Tipo Enfermedad</th>
+                                                        <th>Descripcion</th>
+                                                    </tr>
+                                                    <% /*                                       GestionEnfermedad gest = new GestionEnfermedad();
+                                                        ArrayList<Enfermedad> enfermedades = new ArrayList<Enfermedad>(gest.GetEnfermedades());
+                                                        for (Enfermedad enferm : enfermedades) {
+                                                            out.print("<tr>");
+                                                            out.print("<td class='text-justify'>" + enferm.getNombre() + "</td>");
+                                                            out.print("<td class='text-justify'>" + enferm.getNombretipoE() + "</td>");
+                                                            out.print("<td class='text-justify'>" + enferm.getDescripcion() + "</td>");
+                                                            out.print("</tr>");
+                                                        }*/
+                                                    %>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Remove">Elimina Enfermedad</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Remove" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="form-inline">
+                                                    <form action="DeleteEnfermedad" method="GET">
+                                                        <label for="idEnfe">Nombre Enfermedad</label>
+                                                        <input type="text" class="form-control" id="idEnfe" name="NombreEliminaEnf" placeholder="Nombre enfermedad">
+                                                        <input name="Submit" class="btn btn-primary" type="submit" value="Buscar">
+                                                    </form>                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        function MM_openBrWindow(theURL, winName, features) { //v2.0
+                            window.open(theURL, winName, features);
+                        }
+
+                    </script>
+                    </body>
+                    </html>
