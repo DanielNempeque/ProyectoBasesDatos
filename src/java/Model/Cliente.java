@@ -33,6 +33,15 @@ public class Cliente {
         this.idLogin = idLogin;
     }
 
+    public Cliente(String Name, String Phone, String Document, String BirthDate, String Gender) {
+        this.Name = Name;
+        this.Phone = Phone;
+        this.Document = Document;
+        this.BirthDate = BirthDate;
+        this.Gender = Gender;
+    }
+    
+
     public Cliente() {
     }
 

@@ -5,6 +5,9 @@
  */
 package Controller;
 
+import Gestion.GestionCliente;
+import Gestion.GestionUsuario;
+import Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,13 +26,64 @@ public class Register extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
+            String resp = "";
+            String userName = request.getParameter("txtUserName");
+            String Mail = request.getParameter("txtCorreo");
+            String Pass1 = request.getParameter("txtPass1");
+            String Pass2 = request.getParameter("txtPass1");
+            String Nombre = request.getParameter("txtNombre");
+            String Telefono = request.getParameter("txtTelefono");
+            String Documento = request.getParameter("txtDocumento");
+            String Date = request.getParameter("date");
+            String Genero = request.getParameter("txtGenero");
+            
+            if(userName !="" && userName != null){
+                if(Mail != "" && Mail != null){
+                    if(Pass1.equals(Pass2) && Pass1 != "" && Pass1 != null){
+                        if(Nombre != "" && Nombre != null){
+                            if(Telefono != "" && Telefono != null){
+                                if(Documento != "" && Documento != null){
+                                    if(Date != "" && Date != null){
+                                        if(Genero != null && Genero != ""){
+                                            GestionCliente gestC = new GestionCliente();
+                                            GestionUsuario gestU = new GestionUsuario();
+                                            
+                                            Cliente cliente = new Cliente(Nombre,Telefono,Documento,Date,Genero);
+                                            gestC.createCliente(cliente);
+                                            
+                                        }else{
+                                            resp = "Genero";
+                                        }
+                                    }else{
+                                        resp = "Fecha";
+                                    }
+                                }else{
+                                    resp = "Documento";
+                                }                                   
+                            }else{
+                                resp = "Telefono";
+                            }                            
+                        }else{
+                            resp = "Nombre";
+                        }                        
+                    }else{
+                        resp = "Pass o las contraseñas no coinciden";
+                    }                    
+                }else{
+                    resp = "Mail";
+                }                
+            }else{
+                resp = "User Name";
+            }
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet Register</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>No se lleno el campo: "+resp+"</h1>");
             out.println("</body>");
             out.println("</html>");
         }

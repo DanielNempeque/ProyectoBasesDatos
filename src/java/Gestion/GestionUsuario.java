@@ -100,4 +100,29 @@ public class GestionUsuario extends Controller.ConnectionDB{
             
         return false;
     }
+     public void addLogin(){
+         super.makeConnection();
+        PreparedStatement pst = null;
+        int rs = 0;
+        try {
+            String Query = "insert into Login(Usuario, Password, Correo,id_tipoUsuario, id_cliente)";
+            pst = getConnection().prepareStatement(Query);         
+            rs = pst.executeUpdate();
+            
+            
+        } catch (Exception e) {
+            System.err.println("ERROR: " + e );
+        }finally{
+            try {
+                if(getConnection() != null){
+                    getConnection().close();
+                }  
+                if(pst != null){
+                    pst.close();
+                }
+            } catch (Exception e) {
+                System.err.println("ERROR: " + e );
+            }
+        }
+     }
 }
