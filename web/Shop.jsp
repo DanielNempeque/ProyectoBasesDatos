@@ -32,47 +32,49 @@
         <link rel="stylesheet" type="text/css" href="css/_shop.css">
     </head>
     <script>
-$(document).ready(function(){
-    // Activate Carousel
-    $("#myCarousel").carousel("pause");
+        $(document).ready(function () {
+            // Activate Carousel
+            $("#myCarousel").carousel("pause");
 
-    // Click on the button to start sliding 
-    $("#myBtn").click(function(){
-        $("#myCarousel").carousel("cycle");
-    });
+            // Click on the button to start sliding 
+            $("#myBtn").click(function () {
+                $("#myCarousel").carousel("cycle");
+            });
 
-    // Click on the button to stop sliding 
-    $("#myBtn2").click(function(){
-        $("#myCarousel").carousel("pause");
-    });
-    
-    // Enable Carousel Indicators
-    $(".item1").click(function(){
-        $("#myCarousel").carousel(0);
-    });
-    $(".item2").click(function(){
-        $("#myCarousel").carousel(1);
-    });
-    $(".item3").click(function(){
-        $("#myCarousel").carousel(2);
-    });
-    $(".item4").click(function(){
-        $("#myCarousel").carousel(3);
-    });
-    
-    // Enable Carousel Controls
-    $(".left").click(function(){
-        $("#myCarousel").carousel("prev");
-    });
-    $(".right").click(function(){
-        $("#myCarousel").carousel("next");
-    });
-});
-</script>
-<script type="text/javascript">
-    window.history.forward();
-    function sinVueltaAtras(){ window.history.forward(); }
-</script>
+            // Click on the button to stop sliding 
+            $("#myBtn2").click(function () {
+                $("#myCarousel").carousel("pause");
+            });
+
+            // Enable Carousel Indicators
+            $(".item1").click(function () {
+                $("#myCarousel").carousel(0);
+            });
+            $(".item2").click(function () {
+                $("#myCarousel").carousel(1);
+            });
+            $(".item3").click(function () {
+                $("#myCarousel").carousel(2);
+            });
+            $(".item4").click(function () {
+                $("#myCarousel").carousel(3);
+            });
+
+            // Enable Carousel Controls
+            $(".left").click(function () {
+                $("#myCarousel").carousel("prev");
+            });
+            $(".right").click(function () {
+                $("#myCarousel").carousel("next");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        window.history.forward();
+        function sinVueltaAtras() {
+            window.history.forward();
+        }
+    </script>
     <body style="overflow: visible" onload="sinVueltaAtras();" onpageshow="if (event.persisted) sinVueltaAtras();" onunload="">
         <nav class="navbar navbar-inverse" style="height: 10%">
             <div class="container-fluid">
@@ -119,28 +121,29 @@ $(document).ready(function(){
 
                         <div class="range">
                             <%GestionProducto Ma = new GestionProducto();%>
-                            <input type="range" name="range" min=<%=Ma.getMin()%> max=<%=Ma.getMax()%> value="<%=Ma.getMax() / 2%>" onchange="range.value = value;range2.value = value">
+                            <input type="range" name="range" min=<%=Ma.getMin()%> max=<%=Ma.getMax()%> value="<%=Ma.getMax() / 2%>" onchange="range.value = value;
+                                    range2.value = value">
                             <form action="RPrecio" method="GET">                    
                                 <input type="text" id="range" name="Dinero" value="<%=Ma.getMax() / 2%>" disabled="true">
                                 <button type="submit" name="Dinero" id="range2" value="<%=Ma.getMax() / 2%>">Filtrar</button>
                             </form>
 
                         </div> 
-                            <h4>Tags</h4>
-                            <ul class="list-inline">
-                                <form action="RTag" name="Rtag2">                                
-                            <%
-                                GestionTag gesTag = new GestionTag();
-                                DefaultTableModel moTags = gesTag.getAllTags();
-                                for(int t = 0;t<moTags.getRowCount();t++)
-                                {
+                        <h4>Tags</h4>
+                        <ul class="list-inline">
+                            <form action="RTag" name="Rtag2">                                
+                                <%
+                                    GestionTag gesTag = new GestionTag();
+                                    DefaultTableModel moTags = gesTag.getAllTags();
+                                    for (int t = 0; t < moTags.getRowCount(); t++) {
                                 %>
-                                <button class="btn btn-link" value="<%=moTags.getValueAt(t,0)%>" onclick="document.Rtag2.submit();document.tag1.value = value" name="tag2"><%=moTags.getValueAt(t,1)%></button>
+                                <button class="btn btn-link" value="<%=moTags.getValueAt(t, 0)%>" onclick="document.Rtag2.submit();
+                                        document.tag1.value = value" name="tag2"><%=moTags.getValueAt(t, 1)%></button>
                                 <%
                                     }
-                                    %> 
-                                    </form>
-                                    </ul>
+                                %> 
+                            </form>
+                        </ul>
                         <h4>Tipos de producto</h4>
 
                         <form action="RTipo" method="GET">
@@ -169,7 +172,7 @@ $(document).ready(function(){
                                     y = 0;
                                     request.getSession().setAttribute("productsShop", null);
                                 } else {
-                                    productsShop = (ArrayList<Producto>) request.getSession().getAttribute("productsShop");                                    
+                                    productsShop = (ArrayList<Producto>) request.getSession().getAttribute("productsShop");
                                     y = productsShop.size();
                                 }
 
@@ -212,11 +215,11 @@ $(document).ready(function(){
                                         </tr>
                                     </tbody>
                                 </table>
-                                        <form action="TerminarCompra" method="post" name="terminar"></form>
+                                <form action="TerminarCompra" method="post" name="terminar"></form>
                                 <form>
                                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-money" aria-hidden="true"></i>   
                                         Confirmar compra</button>
-                                                                        
+
                                     <button type="button" class="btn btn-danger" onclick="document.terminar.submit()"><i class="fa fa-ban" aria-hidden="true"></i>   
                                         Cancelar compra</button> 
                                 </form>                                                        
@@ -229,16 +232,16 @@ $(document).ready(function(){
                                                 <h4 class="modal-title">Confirmar Compra</h4>
                                             </div>
                                             <div class="modal-body">
-                                                                    <form action="LoginPurchase" name="compra" method="post">                                
-                                                <div id="myCarousel" class="carousel-inner">                                                   
-                                                    <!-- Wrapper for slides -->
-                                                    <div class="carousel-inner">
-                                                        <div class="item active">                                                            
-                                                            <%
-                                                                Usuario us = null;
-                                                                if (request.getSession().getAttribute("user") == null) {
-                                                            %>
-                                                            
+                                                <form action="LoginPurchase" name="compra" method="post">                                
+                                                    <div id="myCarousel" class="carousel-inner">                                                   
+                                                        <!-- Wrapper for slides -->
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">                                                            
+                                                                <%
+                                                                    Usuario us = null;
+                                                                    if (request.getSession().getAttribute("user") == null) {
+                                                                %>
+
                                                                 <div class="form-group">
                                                                     <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
                                                                     <input type="" class="form-control" id="usrname" placeholder="Username" name="txtUsr">
@@ -248,56 +251,55 @@ $(document).ready(function(){
                                                                     <input type="password" class="form-control" id="psw1" placeholder="Password" name="txtPass">
                                                                 </div> 
                                                                 <a class="right carousel-control" href="#myCarousel" role="button">
-                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
-                                                            </a>         
-                                                            <%
-                                                            } else {
-                                                                us = (Usuario) request.getSession().getAttribute("user");
-                                                            %>
-                                                            <div class="form-group">
-                                                                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                                                                <input type="" class="form-control" id="usrname" name="txtUsr"  value=" <%=us.getUser()%>" disabled="true">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Tipo usuario</label>
-                                                                <input type="" class="form-control" id="psw1"  name="txtPass" enable="false" value=" <%=us.getUserType()%>" disabled="true">
-                                                            </div>
-                                                            <a class="right carousel-control" href="#myCarousel" role="button">
-                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
-                                                            </a>
-                                                            <%
-                                                                }
-                                                            %>
-                                                        </div>
-                                                        <div class="item">
-                                                            <h4><i class="fa fa-credit-card-alt" aria-hidden="true"></i>                    Medio de pago</h4>                                                           
-                                                            <select class="form-control" id="sel1" name="modoPago">
-                                                                <%GestionModoPago gesModo = new GestionModoPago();
-                                                                DefaultTableModel MPagos = gesModo.getAllKindPay();
-                                                                for(int x = 0;x < MPagos.getRowCount();x++)
-                                                                {
+                                                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>         
+                                                                <%
+                                                                } else {
+                                                                    us = (Usuario) request.getSession().getAttribute("user");
                                                                 %>
-                                                                <option><%=MPagos.getValueAt(x, 1)%></option>                                                            
-                                                            <%
-                                                                }
+                                                                <div class="form-group">
+                                                                    <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                                                    <input type="" class="form-control" id="usrname" name="txtUsr"  value=" <%=us.getUser()%>" disabled="true">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Tipo usuario</label>
+                                                                    <input type="" class="form-control" id="psw1"  name="txtPass" enable="false" value=" <%=us.getUserType()%>" disabled="true">
+                                                                </div>
+                                                                <a class="right carousel-control" href="#myCarousel" role="button">
+                                                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                                <%
+                                                                    }
                                                                 %>
-                                                            </select>                                                            
-                                                            <br>
-                                                            <label for="comment">Agregar descripcion:</label>
-                                                            <textarea class="form-control" rows="5" id="comment" name="des"></textarea>
-                                                            <br>
-                                                            <button class="btn btn-default btn-success btn-block" id="regi" onclick="document.compra.submit()"><i class="fa fa-paw" aria-hidden="true"></i>               Comprar</button>
-                                                            <h3 style="position: absolute;left: 150px"><i class="fa fa-cc-discover" aria-hidden="true"></i></h3>
-                                                            <h3 style="position: absolute;left: 100px"><i class="fa fa-cc-visa" aria-hidden="true"></i></h3>
-                                                            <h3 style="position: absolute;left: 50px"><i class="fa fa-cc-diners-club" aria-hidden="true"></i></h3>
-                                                            <h3><i class="fa fa-paypal" aria-hidden="true"></i></h3>
+                                                            </div>
+                                                            <div class="item">
+                                                                <h4><i class="fa fa-credit-card-alt" aria-hidden="true"></i>                    Medio de pago</h4>                                                           
+                                                                <select class="form-control" id="sel1" name="modoPago">
+                                                                    <%GestionModoPago gesModo = new GestionModoPago();
+                                                                        DefaultTableModel MPagos = gesModo.getAllKindPay();
+                                                                        for (int x = 0; x < MPagos.getRowCount(); x++) {
+                                                                    %>
+                                                                    <option><%=MPagos.getValueAt(x, 1)%></option>                                                            
+                                                                    <%
+                                                                        }
+                                                                    %>
+                                                                </select>                                                            
+                                                                <br>
+                                                                <label for="comment">Agregar descripcion:</label>
+                                                                <textarea class="form-control" rows="5" id="comment" name="des"></textarea>
+                                                                <br>
+                                                                <button class="btn btn-default btn-success btn-block" id="regi" onclick="document.compra.submit()"><i class="fa fa-paw" aria-hidden="true"></i>               Comprar</button>
+                                                                <h3 style="position: absolute;left: 150px"><i class="fa fa-cc-discover" aria-hidden="true"></i></h3>
+                                                                <h3 style="position: absolute;left: 100px"><i class="fa fa-cc-visa" aria-hidden="true"></i></h3>
+                                                                <h3 style="position: absolute;left: 50px"><i class="fa fa-cc-diners-club" aria-hidden="true"></i></h3>
+                                                                <h3><i class="fa fa-paypal" aria-hidden="true"></i></h3>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- Left and right controls -->  
-                                                </div> 
-                                                                                               </form>
+                                                        <!-- Left and right controls -->  
+                                                    </div> 
+                                                </form>
                                             </div>                                                  
                                         </div>
                                     </div>
@@ -350,62 +352,12 @@ $(document).ready(function(){
                             }
                         %>  
                     </form>
-=======
 
                 </div>
             </div>
         </div>
-        <form action="AProducto" method="post">
-        <%            
-            if(request.getAttribute("products")==null)
-            {
-            GestionProducto gesP = new GestionProducto();
-            DefaultTableModel moP;            
-            moP = gesP.getAllProducts();
-            for(int x=0;x<moP.getRowCount();x++)
-            {
-            %>
-            <div class="col-sm-4">                 
-                <h4><%=moP.getValueAt(x,0)+" "+moP.getValueAt(x,1)%></h4>
-                <img class="center-block" src="<%=moP.getValueAt(x,2)%>" width="50%" height="150px">
-              <div class="info">
-                  <h5>Cantidad <%=moP.getValueAt(0,3)%></h5>
-                  <h5>$ <%=moP.getValueAt(x, 4)%></h5>
-                <br>
-                <h5><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h5>
-                <h5><i class="fa fa-truck" aria-hidden="true"></i> Envios a todo el pais</h5>
-                <br>                
-                <button type="submit" class="btn btn-success btn-block" name="producto" value="<%=moP.getValueAt(x,0)%>">Comprar</button>
-              </div>
-            </div>  
-        <%
-            }
-}
-else
-{
-    ArrayList<Producto> products = (ArrayList<Producto>)request.getAttribute("products");
-for(Producto xxx:products)            
-            {                            
-    %>
-    <div class="col-sm-4">                 
-                <h4> <%=xxx.getIdProducto()+" "+xxx.getName()%> </h4>
-                <img class="center-block" src="<%=xxx.getImagen()%>" width="50%" height="150px">
-              <div class="info">
-                  <h5>Cantidad <%=xxx.getQuantity()%></h5>
-                  <h5>$ <%=xxx.getPrice()%></h5>
-                <br>
-                <h5><i class="fa fa-credit-card-alt" aria-hidden="true"></i> 36x $ 3.000</h5>
-                <h5><i class="fa fa-truck" aria-hidden="true"></i> Envios a todo el pais</h5>
-                <br>
-                <button type="submit" class="btn btn-success btn-block" name="producto" value="<%=xxx.getIdProducto()%>">Comprar</button>
-              </div>
-            </div>  
-    <%
-}
-}
-            %>  
-            </form>
-    </div>
+        
+    
 
 
 </body>

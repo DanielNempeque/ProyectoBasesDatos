@@ -21,22 +21,6 @@
         <servlet-class>Controller.PurchaseShoppingCart</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ConsultProductName</servlet-name>
-        <servlet-class>Controller.ConsultProductName</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ConsultProductPrice</servlet-name>
-        <servlet-class>Controller.ConsultProductPrice</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ConsultProductType</servlet-name>
-        <servlet-class>Controller.ConsultProductType</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PurchaseShoppingCart</servlet-name>
-        <servlet-class>Controller.PurchaseShoppingCart</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PurchaseOrder</servlet-name>
         <servlet-class>Controller.PurchaseOrder</servlet-class>
     </servlet>
@@ -69,29 +53,8 @@
         <servlet-class>Controller.UpdateProduct</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Controller</servlet-name>
-        <url-pattern>/Register</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
         <servlet-name>LoginAuth</servlet-name>
         <url-pattern>/Login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConsultProductName</servlet-name>
-        <url-pattern>/RNombre</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConsultProductPrice</servlet-name>
-        <url-pattern>/RPrecio</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConsultProductType</servlet-name>
-        <url-pattern>/RTipo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PurchaseShoppingCart</servlet-name>
-        <url-pattern>/AProducto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConsultProductName</servlet-name>

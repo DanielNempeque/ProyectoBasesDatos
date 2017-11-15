@@ -53,9 +53,9 @@ public class ConsultProductName extends HttpServlet {
 
         }            
 
-        }
+        
         ArrayList<Producto> productsShop = null;       
-        if(request.getSession().getAttribute("productsShop")==null)
+        if(request.getSession().getAttribute("productsShop")== null)
         {
             productsShop = new ArrayList<>();
         }

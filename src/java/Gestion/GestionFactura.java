@@ -53,8 +53,7 @@ public class GestionFactura {
             ps = conn.prepareStatement("insert into factura_producto(id_factura,id_producto,cantidad,subtotal) values ((select max(id_factura)from factura),?,?,?);");
             ps.setInt(1, pro.getIdProducto());
             ps.setInt(2,1);
-            ps.setDouble(3, pro.getPrice());
-            ps.setInt(4, pro.getIdProducto());
+            ps.setDouble(3, pro.getPrice());            
             ps.execute();
             conn.close();
     }

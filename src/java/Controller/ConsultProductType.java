@@ -65,7 +65,7 @@ public class ConsultProductType extends HttpServlet {
 
         }                      
 
-        }              
+                     
         ArrayList<Producto> productsShop = null;       
         if(request.getSession().getAttribute("productsShop")==null)
         {

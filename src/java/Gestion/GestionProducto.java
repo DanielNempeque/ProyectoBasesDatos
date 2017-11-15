@@ -59,9 +59,7 @@ public class GestionProducto {
             mo.setColumnIdentifiers(columns);
             Object[] fila = new Object[5];
             ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto where nombre like ?;");	
-            ps.setString(1, name + "%");
-
-            ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto order by id_producto desc");		
+            ps.setString(1, name + "%");            
 
 		rs = ps.executeQuery();
 		while (rs.next()) {

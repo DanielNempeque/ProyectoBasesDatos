@@ -53,10 +53,6 @@ public class ConsultProductPrice extends HttpServlet {
         request.getRequestDispatcher("Shop.jsp").forward(request, response);        
 
         response.setContentType("text/html;charset=UTF-8");
-        GestionProducto ges = new GestionProducto();
-        DefaultTableModel mo = ges.getProductsPrice(Integer.parseInt(request.getParameter("Dinero")));
-        ArrayList<Producto> products = new ArrayList<>();
-        Producto p;
         for (int x = 0; x < mo.getRowCount(); x++) {
             p = new Producto((int) mo.getValueAt(x, 0), (String) mo.getValueAt(x, 1), (String) mo.getValueAt(x, 2),
                     (int) mo.getValueAt(x, 3), (int) mo.getValueAt(x, 4));

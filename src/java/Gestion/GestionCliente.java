@@ -27,14 +27,14 @@ public class GestionCliente extends Controller.ConnectionDB {
         ResultSet rs = null;
         Cliente cli = null;
         try {
-            String Query = "Select id_cliente,nombre,correo,No_documento from cliente where id_login = ?";
+            String Query = "Select C.id_cliente,C.nombre,C.No_documento from cliente c inner join Login L on c.id_cliente = l.id_cliente where L.id_login = ?";
             pst = getConnection().prepareStatement(Query);
             pst.setInt(1,Integer.parseInt(us.getIdLogin()));            
             rs = pst.executeQuery();
             
             while(rs.next())
             {
-                cli = new Cliente(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(1));
+                cli = new Cliente(rs.getString(2),rs.getString(3),rs.getString(1));
             }
         } catch (Exception e) {
             System.err.println("ERROR: " + e );

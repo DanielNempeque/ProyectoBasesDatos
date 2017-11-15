@@ -38,14 +38,14 @@ $(document).ready(function(){
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" onClick="window.location.href='Shop.jsp'">&times;</button>
           <h4 class="modal-title">Mensaje</h4>
         </div>
         <div class="modal-body">
           <h3><%=request.getAttribute("mensaje")%></h3>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="window.location.href='Shop.jsp'">Close</button>
         </div>
       </div>
       
@@ -73,7 +73,6 @@ $(document).ready(function(){
                     <h6><%=cli.getIdClient()%></h6>
                     <h6><%=cli.getName()%></h6>
                     <h6><%=cli.getDocument()%></h6>
-                    <h6><%=cli.getMail()%></h6>
             </div>
             <div class="well">
                 <h5>Informacion del cliente</h5>
