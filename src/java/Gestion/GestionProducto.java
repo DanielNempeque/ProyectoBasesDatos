@@ -33,6 +33,7 @@ public class GestionProducto {
             String[] columns = {"ID","Nombre","Imagen","Cantidad","Precio"};
             mo.setColumnIdentifiers(columns);
             Object[] fila = new Object[5];
+
             ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto;");		
 		rs = ps.executeQuery();
 		while (rs.next()) {
@@ -59,6 +60,9 @@ public class GestionProducto {
             Object[] fila = new Object[5];
             ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto where nombre like ?;");	
             ps.setString(1, name + "%");
+
+            ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto order by id_producto desc");		
+
 		rs = ps.executeQuery();
 		while (rs.next()) {
 			fila[0] = rs.getInt(1);
@@ -71,7 +75,9 @@ public class GestionProducto {
                 conn.close();
             return mo;
     }
+
     public DefaultTableModel getProductsNameType(String name,int type) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
+
     {
             Connection conn = connMySQL.setConeccion();   
             ResultSet rs;
@@ -85,6 +91,7 @@ public class GestionProducto {
             ps = conn.prepareStatement("select id_producto,Nombre,Imagen,Cantidad,Precio from Producto where nombre like ? and id_tipoproducto = ?;");	
             ps.setString(1, name + "%");
             ps.setInt(2, type);
+
 		rs = ps.executeQuery();
 		while (rs.next()) {
 			fila[0] = rs.getInt(1);
@@ -136,6 +143,7 @@ public class GestionProducto {
                 conn.close();
             return p;
     }
+
     public Producto getProductsID2(int ID) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
     {
             Connection conn = connMySQL.setConeccion();   
@@ -150,6 +158,7 @@ public class GestionProducto {
                 conn.close();
             return p;
     }
+
     public DefaultTableModel getProductsType(int Type) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
     {
             Connection conn = connMySQL.setConeccion();   
@@ -175,6 +184,7 @@ public class GestionProducto {
                 conn.close();
             return mo;
     }
+
     public DefaultTableModel getProductsTag(int Tag) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
     {
             Connection conn = connMySQL.setConeccion();   
@@ -234,6 +244,7 @@ public class GestionProducto {
             ps.executeUpdate();
             conn.close();            
     }
+
     public int getMin() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException
     {
             Connection conn = connMySQL.setConeccion();   

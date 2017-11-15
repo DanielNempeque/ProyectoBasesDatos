@@ -9,3 +9,9 @@ $(document).ready(function(){
         $("#register").modal();
     });
 });
+
+$(document).ready(function() {
+    $('.perfil a').click(function() {
+        $('#login').modal();
+    });
+});

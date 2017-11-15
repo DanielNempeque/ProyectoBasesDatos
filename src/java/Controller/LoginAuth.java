@@ -9,6 +9,7 @@ import Gestion.GestionUsuario;
 import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,38 +24,40 @@ public class LoginAuth extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        response.setContentType("text/html;charset=UTF-8");
-        
-        GestionUsuario gest = new GestionUsuario();
-        
-        String user, pass;
-        user = request.getParameter("txtUsr");
-        pass = request.getParameter("txtPass");
-        
-        Usuario us = new Usuario(user, pass);
-        
-        Usuario us2 = gest.AuthCliente(us);
-        
-        if(gest.AuthClienteBoolean(us)){
-            if(us2.getUserType().equals("Administrador")){
-                HttpSession session = request.getSession();
-                session.setAttribute("user", us2);
-                request.getRequestDispatcher("Admin").forward(request, response);
-            }else{
-                HttpSession session = request.getSession();
-                session.setAttribute("user", us2);
-                request.getRequestDispatcher("Profile").forward(request, response);
-            }
+
+        try {
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
             
-        }else{
+            GestionUsuario gest = new GestionUsuario();
+
+            String user = request.getParameter("txtUsr");
+            String pass = request.getParameter("txtPass");
+
+            Usuario us = null;
+            us = new Usuario(user, pass);
+            Usuario us2 = null;
+            us2 = gest.AuthCliente(us);
             HttpSession session = request.getSession();
-            session.setAttribute("error", "No se encontro el usuario");
-            request.getRequestDispatcher("Error").forward(request, response);
+            if (gest.AuthClienteBoolean(us)) {
+                if (us2.getUserType().equals("Administrador")) {
+                    session.setAttribute("user", us2);
+                    response.sendRedirect("AdminScreen.jsp");
+                } else if (us2.getUserType().equals("Cliente")) {
+                    session.setAttribute("user", us2);
+                    response.sendRedirect("Profile.jsp");
+                } else {
+                    out.println("ERRORSITO CHINGON");
+                }
+
+            } else {
+                session.setAttribute("error", "No se encontro el usuario");
+                request.getRequestDispatcher("Error").forward(request, response);
+            }
+        } catch (Exception e) {
+            System.err.println("ERROR: " + e);
         }
-        
-        
-        
+
     }
 
     @Override

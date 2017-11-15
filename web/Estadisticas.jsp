@@ -1,13 +1,13 @@
 <%-- 
-    Document   : index
-    Created on : 30/09/2017, 10:56:49 PM
+    Document   : Estadisticas
+    Created on : 15/11/2017, 01:15:03 AM
     Author     : Daniel Nempeque
 --%>
 
-<%@page import="Gestion.GestionMascota"%>
+<%@page import="Gestion.GestionEstadisiticas"%>
 <%@page import="Model.Usuario"%>
+<%@page import="Gestion.GestionMascota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +18,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -29,35 +29,79 @@
         <script type="text/javascript" src="js/datepicker.js"></script>
         <link rel="stylesheet" type="text/css" href="css/_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/_style.css">
+        <link rel="stylesheet" type="text/css" href="css/_estadisticas.css">
         <script type="text/javascript">
 
             window.onload = function () {
-                var chart = new CanvasJS.Chart("chartContainer", {
-                    theme: "theme2",
+            var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
                     title: {
-                        text: "Estado Animales sin hogar"
+                    text: "Estado Animales sin hogar",
+                            horizontalAlign : "left"
                     },
                     data: [
-                        {
-                            // Change type to "doughnut", "line", "splineArea", etc.
-                            type: "column",
+                    {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "doughnut",
+                            startAngle: 60,
+                            //innerRadius: 60,
+                            indexLabelFontSize: 17,
+                            indexLabel: "{label} - #percent%",
+                            toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                             dataPoints: [
             <%
-                        GestionMascota gest = new GestionMascota();
+                GestionMascota gest = new GestionMascota();
             %>
-                                {label: "Animales con hogar", y: <%=gest.CuentaMascotas("1")%>},
-                                {label: "Animales sin hogar", y: <%=gest.CuentaMascotas("2")%>},
+                            {label: "Animales con hogar", y: <%=gest.CuentaMascotas("1")%>},
+                            {label: "Animales sin hogar", y: <%=gest.CuentaMascotas("2")%>},
                             ]
-                        }
+                    }
                     ]
-                });
-                chart.render();
+            });
+            chart.render();
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+            animationEnabled: true,
+                    theme: "theme2",
+                    title: {
+                    text: "Promedio de edad de los animales segun su estado"
+                    },
+                    data: [
+                    {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                            dataPoints: [
+            <%
+                float[] valores = gest.CuentaMascotaEstado();
+                float v1 = valores[0];
+                float v2 = valores[1];
+            %>
+                            {label: "Adoptado", y: <%=v1%>},
+                            {label: "En espera", y: <%=v2%>},
+                            ]
+                    }
+                    ]
+            });
+            chart2.render();
+            var chart3 = new CanvasJS.Chart("chartContainer3", {
+            theme: "theme2",
+                    title: {
+                    text: "Procentaje de clientes satisfechos :D"
+                    },
+                    data: [
+                    {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                            dataPoints: [
+                            {label: "Clientes", y:100}
+                            ]
+                    }
+                    ]
+            });
+            chart3.render();
             }
         </script>
-
-    </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 10%">
+        <nav class="navbar navbar-inverse " style="height: 10%">
             <div class="container-fluid">
                 <!-- Media menu button-->
 
@@ -108,120 +152,28 @@
                 </div>
             </div>
         </nav>
-
-        <!--Image Slider-->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1" ></li>
-                <li data-target="#myCarousel" data-slide-to="2" ></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="img/Laura1.jpg">
-                    <div class="carousel-caption">
-                        <img src="img/Recurso 8Logo1.png" width="50%">
-                    </div>
-                </div>
-
-                <!--end active-->
-                <div class="item">
-                    <img src="img/pato.png.jpeg">
-                </div>
-                <div class="item">
-                    <img src="img/slider3.jpg">
-                </div>
-            </div>
-            <!--Start Slider-->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previus</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-
-
-        </div>
-
-
-        <!-- Description -->
-        <div class="container" id="about">
-            <h1 class="text-center">Pet Me!</h1>
-            <h1 class="text-center">Una veterinaria comprometida con el cuidado de nuestras mascotas de compañia</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Sobre nosotros</h3>
-                    <p class="text-justify">Somos una clínica Veterinaria dedicada a la atención de pequeños animales de compañía y prestamos servicios especializados. 
-                        Además buscamos mejorar el nivel de la Medicina Veterinaria colocando al servicio de los médicos veterinarios y estudiantes nuestras instalaciones 
-                        y conocimientos para su apoyo, tareas que con espíritu de servicio y vocación académica realizamos con el ánimo de contribuir a la
-                        reflexión y la acción sobre la responsabilidad de la veterinaria en la sociedad actual Colombiana.</p>
-
-                </div>
-
-                <div class="col-md-6" style="margin-top: 5%">
-                    <img src="img/Screenshot_2017-05-19-16-21-43.png" class="img-responsive center-block" width="200" height="200">
-                </div>
-            </div>
-        </div>
-        <!--more description-->
-        <div class="container" id="about_dos">
-            <div class="col-md-6" style="margin-top: 5%">
-                <img src="img/Onix.jpg" class="img-responsive" width="400" height="400">
-            </div>
-            <div class="row">
-                <div class="col-md-6"> 
-                    <h3>Nuestra visión</h3>
-                    <p class="text-justify">Atendiendo nuestro compromiso de prestación de servicios Médicos Veterinarios especializados, 
-                        buscamos en 2018 ser la clínica veterinaria de mayor reconocimiento a nivel local, 
-                        contribuyendo con esto a mejorar la calidad de vida de nuestras mascotas para alegría de sus propietarios.</p>
-                    <p class="text-justify"> Estos son los valores con los que trabajamos para brindar un buen servicio
-                        Dedicación y Laboriosidad.
-                        Ética profesional y Respeto por los animales.
-                        Gran compromiso y Responsabilidad.
-                        Trabajo en equipo.</p>
-
-                </div>
-
-
-            </div>
-        </div>
-        <div class="jumbotron text-center">
-            <h1>SERVICIOS</h1>
-            <p>En PET ME tenemos servicios especializados en el cuidado de tu animal de compañia</p> 
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <img src="img/salud_icono.png" class="img-responsive center-block" width="100" height="100">
-                    <h3>Cosultas</h3>
-                    <p>Diagnosticamos a tu mascota para prevenir y darle los cuidados que necesite.</p>
-                    <p>Contamos con personal especializado para suplir cualquier necesidad.</p>
-                </div>
-                <div class="col-sm-4">
-                    <img src="img/pet_adopt.png" class="img-responsive" width="340" height="340">
-                    <h3>Adopciones</h3>
-                    <p>Tu primera opción a la hora de incluir un nuevo integrante a tu familia.</p>
-                    <p>Contamos con una gran nomina de adopciones con animales de diferentes especies, que buscan 
-                        un hogar donde puedan pasar el resto de su vida.</p>
-                </div>
-                <div class="col-sm-4">
-                    <img src="img/petshop.png" class="img-responsive center-block" width="110" height="110">
-                    <h3>Pet shop</h3>        
-                    <p>En nuestra tienda encontrarás todo lo que necesitas para tu mascota accesorios, medicinas</p>
-                    <p>Todos nuestros porductos, accesorios y medicamentos cumplen los más altos estandares de calidad pensando en tu seguridad y la de tu mascota</p>
-                </div>
-            </div>
+        <div>
+            <h1 class="text-center" style="padding: 1%">Estadisticas</h1>
         </div>
         <div class="container">
-            <div id="chartContainer" style="height: 500px; width: 100%;"></div>
+            <div class="row">
+                <div class="col-lg-6" style="padding: 5%">
+                    <div id="chartContainer" style="height: 500px; width: 100%;"></div>
+                </div>
+                <div class="col-lg-6" style="padding: 5%">
+                    <div id="chartContainer2" style="height: 500px; width: 100%;"></div>
+                </div>
+            </div>
+            <%                GestionEstadisiticas estad = new GestionEstadisiticas();
+                String nombre1 = estad.GetMaxMascotas();
+            %>
+            <div class="row" style="padding: 3%" id="divMascotas">
+                <h2 class="text-center"><strong>¿La persona con mas mascotas es: ?</strong> ¡<%=nombre1%>!</h2>
+            </div>
+            <div class="container   " style="padding: 5%">
+                <div class="center-block" id="chartContainer3" style="height: 300px; width: 80%;"></div>
+            </div>
         </div>
-
-
-
-
         <!--register-->
         <form action="Register" method="GET">
             <div class="modal fade" id="register" role="dialog">
@@ -318,22 +270,5 @@
             </div>
 
         </form>
-
-        <footer class="container-fluid text-center" id="footer">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3>Universidad de La Sabana</h3>
-                    <h4>Fundamentos de bases de datos</h4>
-                    <h5>vision otri</h5>				
-                </div>
-                <div class="col-sm-6">
-                    <h4>Powered by</h4>
-                    <p>Stiven Lopez - Gabriela Lozano - Daniel Nempeque</p>
-                    <p>Juliana Perez - Laura Rodriguez - Santiago Tejada</p>
-                </div>
-            </div>
-        </footer>
-
-
     </body>
 </html>

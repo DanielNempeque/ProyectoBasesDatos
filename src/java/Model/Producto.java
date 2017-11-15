@@ -25,6 +25,7 @@ public class Producto {
         this.Quantity = Quantity;
         this.Price = Price;
     }
+
     public Producto(int TypeProduct, String Name, String Imagen, int Quantity, int Price,int IdProducto) {
         this.TypeProduct = TypeProduct;
         this.IdProducto = IdProducto;
@@ -33,6 +34,7 @@ public class Producto {
         this.Quantity = Quantity;
         this.Price = Price;
     }
+
 
     public Producto(String Name, String Imagen, int Quantity, int Price) {
         this.Name = Name;
