@@ -18,13 +18,6 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<%
-    HttpSession session1 = request.getSession();
-    Usuario us = (Usuario) session1.getAttribute("user");
-    if (us != null && us.getUserType().equals("Cliente")) {
-
-
-%>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -64,7 +57,12 @@
                     <div class="collapse navbar-collapse" id="MyNavbar">
                         <ul class="nav navbar-nav navbar-right ">
                             <li><a href="Shop.jsp">Tienda <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                                    <%                                        if (us == null) {
+                                    <%
+
+                                        HttpSession session1 = request.getSession();
+                                        Usuario us = (Usuario) session1.getAttribute("user");
+
+                                        if (us == null) {
 
                                             out.println("<button type='button' class='btn btn-primary btn-lg' id='myLogin'>Login <i class='fa fa-sign-in' aria-hidden='true'></i></button>");
                                             out.println("<button type='button' class='btn btn-default btn-lg' id='myRegister'>Register</button>");
@@ -200,21 +198,21 @@
                                      <p>No aplica</p> 
                                  </div>
                              </div>-->
-
-                            <div class="col-sm-4">
-                                <div class="well">
-                                    <h4>Peso</h4> 
-                                    <%                                    for (Mascota mascotas : mas) {
-                                            if (mascotas.getNombre().equals(NombreCombo)) {
-                                                out.println("<p>" + mascotas.getPeso() + "</p>");
+                            
+                                <div class="col-sm-4">
+                                    <div class="well">
+                                        <h4>Peso</h4> 
+                                        <%                                    for (Mascota mascotas : mas) {
+                                                if (mascotas.getNombre().equals(NombreCombo)) {
+                                                    out.println("<p>" + mascotas.getPeso() + "</p>");
+                                                }
                                             }
-                                        }
 
 
-                                    %>
+                                        %>
+                                    </div>
                                 </div>
-                            </div>
-
+                            
                         </div>
 
                         <div class="container">
@@ -390,7 +388,3 @@
                         -->
                         </body>
                         </html>
-                        <%    } else {
-                                response.sendRedirect("index.jsp");
-                            }
-                        %>

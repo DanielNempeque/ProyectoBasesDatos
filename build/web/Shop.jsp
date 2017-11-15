@@ -64,10 +64,12 @@
         <div class="menu-search menu-item">
             <form action="RNombre" method="GET">
             <i class="fa fa-search" aria-hidden="true" style="font-size: 15px;
-            padding-right: 3px;"></i><input type="text" name="nombre" placeholder="Search..">
+             "></i><input type="text" name="nombre" placeholder="Search..">
+            <br>
             <br>
             <button class="btn btn-lg btn-default btn-block" style="width: 90%;" onclick="submit"> Buscar</button>
-          </form>          
+          </form>   
+            <br>
         </div> 
         
             

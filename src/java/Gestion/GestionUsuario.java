@@ -34,7 +34,7 @@ public class GestionUsuario extends Controller.ConnectionDB{
             while(rs.next()){
                 String idLogin = rs.getString(1);
                 String Usuario = rs.getString(2);
-                String Password = rs.getString(2);
+                String Password = rs.getString(3);
                 String TipoU = rs.getString(4);
                 String idCliente = rs.getString(5);
                 

@@ -4,6 +4,7 @@
     Author     : Daniel Nempeque
 --%>
 
+<%@page import="Model.Usuario"%>
 <%@page import="Model.Enfermedad"%>
 <%@page import="Model.TipoEnfermedad"%>
 <%@page import="java.util.ArrayList"%>
@@ -11,6 +12,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
+<%
+    HttpSession session1 = request.getSession();
+    Usuario us = (Usuario) session1.getAttribute("user");
+    if (us != null && us.getUserType().equals("Administrador")) {
+
+
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,35 +34,38 @@
         <link rel="stylesheet" type="text/css" href="css/_style.css">
     </head>
     <body>
-        <nav class="navbar navbar-inverse" style="height: 10%">
-            <div class="container-fluid">
-                <!-- Media menu button-->
+        <form action="Close" method="GET">
+            <nav class="navbar navbar-inverse" style="height: 10%">
+                <div class="container-fluid">
+                    <!-- Media menu button-->
 
-                <div class="navbar-header" style="width: 20%">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar" >
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.jsp"> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
+                    <div class="navbar-header" style="width: 20%">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar" >
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.jsp"> <img class="LogoPrincipal" src="img/Recurso4PerrituNegro.png" width="40%" ></a>
 
-                </div>	
+                    </div>	
 
-                <!-- end media menu button-->
+                    <!-- end media menu button-->
 
-                <div class="collapse navbar-collapse" id="MyNavbar">
-                    <ul class="nav navbar-nav navbar-right ">
-                        <li><a href="Enfermedad.jsp">Enfermedad</i></a></li>
-                        <li><a href="Consulta.jsp">Consultas</i></a></li>
-                        <li><a href="Profile.jsp">Diagnostico</i></a></li>
-                        <button type="button" class="btn btn-primary btn-lg" onClick="window.location.href = 'login.jsp'">Log Out <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                    <div class="collapse navbar-collapse" id="MyNavbar">
+                        <ul class="nav navbar-nav navbar-right ">
+                            <li><a href="Enfermedad.jsp">Enfermedad</i></a></li>
+                            <li><a href="Consulta.jsp">Consultas</i></a></li>
+                            <li><a href="Profile.jsp">Diagnostico</i></a></li>
 
-                    </ul>			
+                            <button type="submit" class="btn btn-primary btn-lg">Log Out <i class="fa fa-sign-in" aria-hidden="true"></i></button>
 
+
+                        </ul>			
+
+                    </div>
                 </div>
-            </div>
-        </nav>
-
+            </nav>
+        </form>
         <div class="container">
             <h1>Enfermedad</h1>
             <div class="panel-group" id="accordion">
@@ -71,8 +82,7 @@
                                     <div class="form-group">
                                         <label for="idTipoEnfermedad">Tipo Enfermedad</label>
                                         <select class="form-control" id="idTipoEnfermedad" name="TipoEnfermedad">
-                                            <%
-                                                GestionEnfermedad enf = new GestionEnfermedad();
+                                            <%                                                GestionEnfermedad enf = new GestionEnfermedad();
                                                 ArrayList<TipoEnfermedad> tip = new ArrayList<TipoEnfermedad>(enf.GetTipoEnfermedad());
                                                 for (TipoEnfermedad enfermedades : tip) {
                                                     out.println("<option>" + enfermedades.getNombre() + "</option>");
@@ -182,7 +192,11 @@
                 function MM_openBrWindow(theURL, winName, features) { //v2.0
                     window.open(theURL, winName, features);
                 }
-                
+
             </script>
     </body>
 </html>
+<%    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
