@@ -10,17 +10,28 @@ package Model;
  * @author juliana
  */
 public class Mascota {
-   private int id_Animal, id_cliente, id_estado;
+   private int id_Animal, id_cliente, id_estado, id_tipoanimal;
    private String Nombre, FechaNacimiento, Peso,NombreEstado,Descripcion;
 
-    public Mascota(int id_Animal, int id_cliente, int id_estado, String Nombre, String FechaNacimiento,String Peso) {
+    public Mascota(int id_Animal, int id_cliente, int id_estado, int id_tipoanimal, String Nombre, String FechaNacimiento,String Peso) {
         this.id_Animal = id_Animal;
         this.id_cliente = id_cliente;
         this.id_estado = id_estado;
+        this.id_tipoanimal = id_tipoanimal;
         this.Nombre = Nombre;
         this.FechaNacimiento = FechaNacimiento;
         this.Peso= Peso;
     }
+
+    public Mascota() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getId_tipoanimal() {
+        return id_tipoanimal;
+    }
+    
+    
 
     public void setNombreEstado(String NombreEstado) {
         this.NombreEstado = NombreEstado;
