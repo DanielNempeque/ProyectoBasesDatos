@@ -29,18 +29,25 @@
         <script type="text/javascript" src="js/datepicker.js"></script>
         <link rel="stylesheet" type="text/css" href="css/_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/_style.css">
+        <link rel="stylesheet" type="text/css" href="css/_estadisticas.css">
         <script type="text/javascript">
 
             window.onload = function () {
             var chart = new CanvasJS.Chart("chartContainer", {
-            theme: "theme2",
+            animationEnabled: true,
                     title: {
-                    text: "Estado Animales sin hogar"
+                    text: "Estado Animales sin hogar",
+                    horizontalAlign : "left"
                     },
                     data: [
                     {
                     // Change type to "doughnut", "line", "splineArea", etc.
-                    type: "column",
+                    type: "doughnut",
+                    startAngle: 60,
+                    //innerRadius: 60,
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label} - #percent%",
+                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                             dataPoints: [
             <%
                 GestionMascota gest = new GestionMascota();
@@ -53,6 +60,7 @@
             });
             chart.render();
             var chart2 = new CanvasJS.Chart("chartContainer2", {
+            animationEnabled: true,
             theme: "theme2",
                     title: {
                     text: "Promedio de edad de los animales segun su estado"
@@ -74,6 +82,22 @@
                     ]
             });
             chart2.render();
+            var chart3 = new CanvasJS.Chart("chartContainer3", {
+            theme: "theme2",
+                    title: {
+                    text: "Procentaje de clientes satisfechos :D"
+                    },
+                    data: [
+                    {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                            dataPoints: [
+                            {label: "Clientes", y:100}
+                            ]
+                    }
+                    ]
+            });
+            chart3.render();
             }
         </script>
     <body>
@@ -140,15 +164,15 @@
                     <div id="chartContainer2" style="height: 500px; width: 100%;"></div>
                 </div>
             </div>
-            <%
-                GestionEstadisiticas estad = new GestionEstadisiticas();
+            <%                GestionEstadisiticas estad = new GestionEstadisiticas();
                 String nombre1 = estad.GetMaxMascotas();
             %>
-            <div class="row" style="padding: 5%">
-                <h2><strong>¿La persona con mas mascotas es: ?</strong> !<%=nombre1%>¡</h2>
+            <div class="row" style="padding: 3%" id="divMascotas">
+                <h2 class="text-center"><strong>¿La persona con mas mascotas es: ?</strong> ¡<%=nombre1%>!</h2>
             </div>
-        </div>
-
-
+            <div class="container   " style="padding: 5%">
+                <div class="center-block" id="chartContainer3" style="height: 300px; width: 80%;"></div>
+            </div>
+        </div>        
     </body>
 </html>
