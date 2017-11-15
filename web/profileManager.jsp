@@ -1,9 +1,11 @@
 <%-- 
-    Document   : Prrofile
-    Created on : 14/10/2017, 06:59:41 PM
-    Author     : Daniel Nempeque
+    Document   : profileManager
+    Created on : 14/11/2017, 10:39:02 PM
+    Author     : Laura
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <%@page import="Model.Consulta"%>
 <%@page import="Model.Consulta"%>
 <%@page import="Gestion.GestionConsulta"%>
@@ -14,10 +16,8 @@
 <%@page import="Model.Cliente"%>
 <%@page import="Gestion.GestionCliente"%>
 <%@page import="Model.Usuario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -388,3 +388,4 @@
                         -->
                         </body>
                         </html>
+

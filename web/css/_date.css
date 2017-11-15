@@ -1,0 +1,10 @@
+label{
+    margin-left: 20 px;
+}
+#datepicker{
+    width: 180 px; 
+    margin: 0 20 px 20 px 20 px;
+}
+#datepicker > span:hover{
+    cursor: pointer;
+}

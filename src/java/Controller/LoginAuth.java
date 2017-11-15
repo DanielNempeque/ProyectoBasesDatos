@@ -36,7 +36,6 @@ public class LoginAuth extends HttpServlet {
 
             Usuario us = null;
             us = new Usuario(user, pass);
-
             Usuario us2 = null;
             us2 = gest.AuthCliente(us);
             HttpSession session = request.getSession();

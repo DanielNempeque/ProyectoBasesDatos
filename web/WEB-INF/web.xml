@@ -9,10 +9,6 @@
         <servlet-class>Controller.LoginAuth</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LogOut</servlet-name>
-        <servlet-class>Controller.LogOut</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ConsultProductName</servlet-name>
         <servlet-class>Controller.ConsultProductName</servlet-class>
     </servlet>
@@ -35,10 +31,6 @@
     <servlet-mapping>
         <servlet-name>LoginAuth</servlet-name>
         <url-pattern>/Login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LogOut</servlet-name>
-        <url-pattern>/Close</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConsultProductName</servlet-name>

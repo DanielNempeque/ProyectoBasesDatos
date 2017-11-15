@@ -21,7 +21,7 @@ public class GestionUsuario extends Controller.ConnectionDB{
         ResultSet rs = null;
         Usuario user = null;
         try {
-            String Query = "SELECT L.id_login, L.Usuario, L.password, T.Nombre FROM Login L\n"
+            String Query = "SELECT L.id_login, L.Usuario, L.password, T.Nombre,L.id_cliente FROM Login L\n"
                     + "INNER JOIN Tipo_Usuario T ON L.id_TipoUsuario = T.id_TipoUsuario\n"
                     + "WHERE (L.usuario = ? AND L.password = ?)OR(L.Correo = ? AND L.password = ?)";
             pst = getConnection().prepareStatement(Query);
@@ -36,8 +36,9 @@ public class GestionUsuario extends Controller.ConnectionDB{
                 String Usuario = rs.getString(2);
                 String Password = rs.getString(2);
                 String TipoU = rs.getString(4);
+                String idCliente = rs.getString(5);
                 
-                user = new Usuario(idLogin, Usuario, Password, TipoU);
+                user = new Usuario(idLogin, Usuario, Password, TipoU,idCliente);
             }
             return user;            
             
