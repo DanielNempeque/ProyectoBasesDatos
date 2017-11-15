@@ -4,6 +4,9 @@
     Author     : Daniel Nempeque
 --%>
 
+<%@page import="Model.Enfermedad"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Gestion.GestionEnfermedad"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -49,5 +52,35 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <h2 class="text-center"><strong>Seleccione de las enfermedades que se encuentran a continuacion</strong></h2>
+        </div>
+        <div class="container" style="padding: 3%">
+            <form action="" method="get">
+                <table>
+                    <tr>
+                        <th>Nombre enfermedad</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <%
+                                GestionEnfermedad gestenf = new GestionEnfermedad();
+                                ArrayList<Enfermedad> enfermedades = new ArrayList<Enfermedad>(gestenf.GetEnfermedades());
+
+                                for (Enfermedad enf : enfermedades) {
+                                    out.print("<div class=\"checkbox\">");
+                                    out.print("<label>");
+                                    out.println("<input type=\"checkbox\" name=\"enfermedades\" value="+enf.getNombre()+">");
+                                    out.println(enf.getNombre());
+                                    out.print("</label>");
+                                    out.print("</div>");
+                                }
+                            %>
+                        </td>
+                    </tr>
+                </table>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="Completa">Continuar</button>
+            </form>
+        </div>
     </body>
 </html>
