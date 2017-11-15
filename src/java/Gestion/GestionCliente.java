@@ -34,7 +34,7 @@ public class GestionCliente extends Controller.ConnectionDB {
             
             while(rs.next())
             {
-                cli = new Cliente(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(1));
+                cli = new Cliente(rs.getString(2),rs.getString(4),rs.getString(1));
             }
         } catch (Exception e) {
             System.err.println("ERROR: " + e );

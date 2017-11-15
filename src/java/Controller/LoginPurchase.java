@@ -9,6 +9,8 @@ import Gestion.GestionUsuario;
 import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -53,7 +55,7 @@ public class LoginPurchase extends HttpServlet {
             }            
         }else{
             HttpSession session = request.getSession();
-            session.setAttribute("error", "No se encontro el usuario");            
+            session.setAttribute("error", "No se encontro el usuario");                         
         }        
         request.getRequestDispatcher("Factura").forward(request, response);
     }
