@@ -36,7 +36,12 @@ public class ConsultProductType extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");                
+               
+
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.print(request.getParameter("tipo"));        
+
         GestionProducto ges = new GestionProducto();        
         DefaultTableModel mo = null;
         try {
@@ -57,9 +62,22 @@ public class ConsultProductType extends HttpServlet {
             p = new Producto((int)mo.getValueAt(x, 0),(String)mo.getValueAt(x, 1),(String)mo.getValueAt(x, 2),
             (int)mo.getValueAt(x, 3),(int)mo.getValueAt(x, 4));            
             products.add(p);
+
         }                      
-        request.setAttribute("products", products);
-        request.getRequestDispatcher("Shop.jsp").forward(request, response);
+
+        }              
+        ArrayList<Producto> productsShop = null;       
+        if(request.getSession().getAttribute("productsShop")==null)
+        {
+            productsShop = new ArrayList<>();
+        }
+        else
+        {
+            productsShop = (ArrayList<Producto>) request.getSession().getAttribute("productsShop");
+        }        
+        request.getSession().setAttribute("productsShop", productsShop);
+        request.setAttribute("productsShop", productsShop);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
