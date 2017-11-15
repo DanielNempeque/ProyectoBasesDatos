@@ -18,8 +18,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
 
         <script type="text/javascript" src="js/modal.js"></script>
+        <script type="text/javascript" src="js/datepicker.js"></script>
         <link rel="stylesheet" type="text/css" href="css/_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/_style.css">
         <script type="text/javascript">
@@ -35,9 +42,9 @@
                             // Change type to "doughnut", "line", "splineArea", etc.
                             type: "column",
                             dataPoints: [
-                    <%
+            <%
                         GestionMascota gest = new GestionMascota();
-                    %>
+            %>
                                 {label: "Animales con hogar", y: <%=gest.CuentaMascotas("1")%>},
                                 {label: "Animales sin hogar", y: <%=gest.CuentaMascotas("2")%>},
                             ]
@@ -230,20 +237,44 @@
                             <form role="form">
                                 <div class="form-group">
                                     <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                                    <input type="text" class="form-control" id="usrname" placeholder="Enter username">
+                                    <input type="text" class="form-control" id="usrname" placeholder="Usuario" name="txtUserName">
                                 </div>
                                 <div class="form-group">
                                     <label for="usrname"><span class="fa fa-envelope"></span> Mail</label>
-                                    <input type="email" class="form-control" id="usrname" placeholder="Enter email">
+                                    <input type="email" class="form-control" id="usrname" placeholder="Correo" name="txtCorreo">
                                 </div>
                                 <div class="form-group">
                                     <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                                    <input type="password" class="form-control" id="psw1" placeholder="Enter password">
+                                    <input type="password" class="form-control" id="psw1" placeholder="Enter password" name="txtPass1">
                                     <br>
-                                    <input type="password" class="form-control" id="psw2" placeholder="Enter password">
+                                    <input type="password" class="form-control" id="psw2" placeholder="Enter password" name="txtPass2">
                                 </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="" checked>¿Deseas recibir correos?</label>
+                                <div class="form-group">
+                                    <label for="nom"><span class="glyphicon glyphicon-user"></span> Nombre</label>
+                                    <input type="text" class="form-control" id="nom" placeholder="Nombre" name="txtNombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tel">Telefono</label>
+                                    <input type="text" class="form-control" id="tel" placeholder="Telefono" name="txtTelefono">
+                                </div>
+                                <div class="form-group">
+                                    <label for="doc">Numero de Documento</label>
+                                    <input type="text" class="form-control" id="doc" placeholder="Documento" name="txtDocumento">
+                                </div>
+                                <div class="form-group">
+                                    <label for="datepicker">Fecha nacimiento</label>
+                                    <div id="datepicker" class="input-group date" data-date-format="yyyy-mm-dd">
+                                        <input name="date" class="form-control" type="text" readonly />
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="doc">Genero</label>
+                                    <select class="form-control" id="idTipoEnfermedad" name="txtGenero">
+                                        <option>Masculino</option>
+                                        <option>Femenino</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-default btn-success btn-block" id="regi"><span class="glyphicon glyphicon-off"></span> Register</button>
                             </form>
@@ -287,21 +318,21 @@
             </div>
 
         </form>
-        
+
         <footer class="container-fluid text-center" id="footer">
-		<div class="row">
-			<div class="col-sm-6">
-				<h3>Universidad de La Sabana</h3>
-				<h4>Fundamentos de bases de datos</h4>
-				<h5>vision otri</h5>				
-			</div>
-			<div class="col-sm-6">
-				<h4>Powered by</h4>
-                                <p>Stiven Lopez - Gabriela Lozano - Daniel Nempeque</p>
-                                <p>Juliana Perez - Laura Rodriguez - Santiago Tejada</p>
-			</div>
-		</div>
-	</footer>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Universidad de La Sabana</h3>
+                    <h4>Fundamentos de bases de datos</h4>
+                    <h5>vision otri</h5>				
+                </div>
+                <div class="col-sm-6">
+                    <h4>Powered by</h4>
+                    <p>Stiven Lopez - Gabriela Lozano - Daniel Nempeque</p>
+                    <p>Juliana Perez - Laura Rodriguez - Santiago Tejada</p>
+                </div>
+            </div>
+        </footer>
 
 
     </body>
