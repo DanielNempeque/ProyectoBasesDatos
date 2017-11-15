@@ -14,12 +14,13 @@ public class Usuario {
     private String User;
     private String Password;
     private String UserType;
+    private String Mail;
     private String idCliente;
 
-    public Usuario(String User, String Password, String UserType) {
+    public Usuario(String User, String Password,String mail,int none1) {
         this.User = User;
         this.Password = Password;
-        this.UserType = UserType;
+        this.Mail = mail;
     }
 
     public Usuario(String idLogin, String User, String Password, String UserType, String idCliente) {
@@ -29,18 +30,11 @@ public class Usuario {
         this.UserType = UserType;
         this.idCliente = idCliente;
     }
-    public Usuario(String idLogin, String User, String Password, String UserType) {
-        this.idLogin = idLogin;
-        this.User = User;
-        this.Password = Password;
-        this.UserType = UserType;
-    }
-
+    
     public Usuario(String User, String Password) {
         this.User = User;
         this.Password = Password;
     }
-    
 
     public String getIdLogin() {
         return idLogin;
@@ -74,6 +68,14 @@ public class Usuario {
         this.UserType = UserType;
     }
 
+    public String getMail() {
+        return Mail;
+    }
+
+    public void setMail(String Mail) {
+        this.Mail = Mail;
+    }
+
     public String getIdCliente() {
         return idCliente;
     }
@@ -83,4 +85,7 @@ public class Usuario {
     }
     
     
+    
+    
 }
+

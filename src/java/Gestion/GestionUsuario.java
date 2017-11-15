@@ -38,7 +38,7 @@ public class GestionUsuario extends Controller.ConnectionDB{
                 String TipoU = rs.getString(4);
                 String idCliente = rs.getString(5);
                 
-                user = new Usuario(idLogin, Usuario, Password, TipoU,idCliente);
+                user = new Usuario(idLogin, Usuario, Password, TipoU , idCliente);
             }
             return user;            
             
@@ -100,13 +100,18 @@ public class GestionUsuario extends Controller.ConnectionDB{
             
         return false;
     }
-     public void addLogin(){
+     public void addLogin(Usuario usuario){
          super.makeConnection();
         PreparedStatement pst = null;
         int rs = 0;
+         GestionCliente cli = new GestionCliente();
         try {
-            String Query = "insert into Login(Usuario, Password, Correo,id_tipoUsuario, id_cliente)";
-            pst = getConnection().prepareStatement(Query);         
+            String Query = "insert into Login(Usuario, Password, Correo,id_tipoUsuario, id_cliente) values (?,?,?,2,?)";
+            pst = getConnection().prepareStatement(Query);     
+            pst.setString(1, usuario.getUser());
+            pst.setString(2, usuario.getPassword());
+            pst.setString(3, usuario.getMail());
+            pst.setInt(4, cli.getClienteActual());
             rs = pst.executeUpdate();
             
             

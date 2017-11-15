@@ -5,9 +5,18 @@
         <group>
             <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionConsulta.java</file>
             <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/Consulta.jsp</file>
-            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/CreateConsulta.java</file>
             <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionMascota.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionCliente.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionEnfermedad.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Model/Usuario.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Gestion/GestionUsuario.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/Register.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/Enfermedad.jsp</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/CreateConsulta.java</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/index.jsp</file>
             <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/SeleccionaEnfermedades.jsp</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Daniel%20Nempeque/Documents/NetBeansProjects/ProyectoBasesDatos/src/java/Controller/DeleteEnfermedad.java</file>
         </group>
     </open-files>
 </project-private>
